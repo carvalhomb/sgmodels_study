@@ -2,7 +2,9 @@
 
 Repository for data and R scripts used in study on two models for analysis of serious games.
 
-The files in this repository allow you to re-generate the file *report.html* and see the data analyses yourself.
+The files in this repository allow you to re-generate the file *Report.html* and see the data analyses yourself.
+
+The repository also contains the files used to generate the online version of the study using LimeSurvey.
 
 ## Folder organization
 
@@ -34,7 +36,7 @@ Here is what you will find in this repository:
 
 ## Build the report
 
-To generate the report yourself, you can use the Makefile. You can un it like this (in UNIX or Cygwin, assuming you have GNU make, R and all the necessary dependencies installed):
+To generate the report yourself, you can use the Makefile. You can run it like this (in UNIX or Cygwin, assuming you have GNU make, R and all the necessary dependencies installed):
 
 ```bash
 make report
@@ -46,7 +48,7 @@ If you change the R script, you might want to clean the temporary files before r
 make cleanall
 ```
 
-You can also use RStudio and Knitr to knit the script found in *R/report.Rmd*, which outputs a much nicer looking HTML.
+You can also use RStudio and Knitr to knit the script found in *R/Report.Rmd*, which outputs a much nicer looking HTML.
 
 ## License
 
