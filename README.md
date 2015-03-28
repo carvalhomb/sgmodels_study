@@ -2,23 +2,7 @@
 
 Repository for data and R scripts used in study on two models for analysis of serious games.
 
-The files in this repository allow you to re-generate the file *Report.html* and see the data analyses yourself.
-
-## Build the report
-
-To generate the report yourself, you can use the Makefile. Just run (in UNIX or Cygwin):
-
-```bash
-make report
-```
-
-If you change the R script, you might want to clean the temporary files before running the script:
-
-```bash
-make cleanall
-```
-
-You can also use RStudio and Knitr to knit the script found in *R/report.Rmd*, which outputs a much nicer looking HTML.
+The files in this repository allow you to re-generate the file *report.html* and see the data analyses yourself.
 
 ## Folder organization
 
@@ -47,6 +31,22 @@ Here is what you will find in this repository:
 
 *report.html*
 :   The output of the R script with the analysis of the data. If you just want to look at the full report from the data, this is the file you want to open.
+
+## Build the report
+
+To generate the report yourself, you can use the Makefile. You can un it like this (in UNIX or Cygwin, assuming you have GNU make, R and all the necessary dependencies installed):
+
+```bash
+make report
+```
+
+If you change the R script, you might want to clean the temporary files before running the script:
+
+```bash
+make cleanall
+```
+
+You can also use RStudio and Knitr to knit the script found in *R/report.Rmd*, which outputs a much nicer looking HTML.
 
 ## License
 
