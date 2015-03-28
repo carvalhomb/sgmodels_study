@@ -12,3 +12,8 @@
 vignettes/*.html
 vignettes/*.pdf
 *~
+
+#Knitr temporary files
+cache/*
+report.md
+
