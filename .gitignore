@@ -15,5 +15,5 @@ vignettes/*.pdf
 
 #Knitr temporary files
 cache/*
-report.md
+Report.md
 

@@ -1,0 +1,1955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+ <LimeSurveyDocType>Survey</LimeSurveyDocType>
+ <DBVersion>178</DBVersion>
+ <languages>
+  <language>en</language>
+ </languages>
+ <groups>
+  <fields>
+   <fieldname>gid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>group_name</fieldname>
+   <fieldname>group_order</fieldname>
+   <fieldname>description</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>randomization_group</fieldname>
+   <fieldname>grelevance</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <gid><![CDATA[165]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[Demographics]]></group_name>
+    <group_order><![CDATA[2]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[famsgs>=4]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[166]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[Finalization]]></group_name>
+    <group_order><![CDATA[16]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[famsgs>=4]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[167]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[ATMSG description]]></group_name>
+    <group_order><![CDATA[4]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[(groupassignment==1) && (famsgs>=4)]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[168]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[ATMSG Usability]]></group_name>
+    <group_order><![CDATA[6]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[(groupassignment==1) && (famsgs>=4)]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[169]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[Comparison of models]]></group_name>
+    <group_order><![CDATA[15]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[famsgs>=4]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[170]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[ATMSG game analysis]]></group_name>
+    <group_order><![CDATA[5]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[(groupassignment==1) && (famsgs>=4)]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[171]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[LM-GM description]]></group_name>
+    <group_order><![CDATA[8]]></group_order>
+    <description><![CDATA[In this section of the questionnaire, you will evaluate the LM-GM model.]]></description>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[famsgs>=4]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[172]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[LM-GM game analysis]]></group_name>
+    <group_order><![CDATA[9]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[famsgs>=4]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[173]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[LM-GM Usability]]></group_name>
+    <group_order><![CDATA[10]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[famsgs>=4]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[174]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[ATMSG description]]></group_name>
+    <group_order><![CDATA[12]]></group_order>
+    <description><![CDATA[In this section of the questionnaire, you will evaluate the ATMSG model.]]></description>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[(groupassignment==2) && (famsgs>=4)]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[175]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[ATMSG game analysis]]></group_name>
+    <group_order><![CDATA[13]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[(groupassignment==2) && (famsgs>=4)]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[176]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[ATMSG Usability]]></group_name>
+    <group_order><![CDATA[14]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[(groupassignment==2) && (famsgs>=4)]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[177]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[Play the game!]]></group_name>
+    <group_order><![CDATA[3]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[famsgs>=4]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[178]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[Interlude]]></group_name>
+    <group_order><![CDATA[7]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[(groupassignment==1) && (famsgs>=4)]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[179]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[Interlude]]></group_name>
+    <group_order><![CDATA[11]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[(groupassignment==2) && (famsgs>=4)]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[180]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[Participant selection]]></group_name>
+    <group_order><![CDATA[0]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+   <row>
+    <gid><![CDATA[181]]></gid>
+    <sid><![CDATA[782678]]></sid>
+    <group_name><![CDATA[Not in target group]]></group_name>
+    <group_order><![CDATA[1]]></group_order>
+    <description/>
+    <language><![CDATA[en]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[famsgs <= 3]]></grelevance>
+   </row>
+  </rows>
+ </groups>
+ <questions>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>parent_qid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>gid</fieldname>
+   <fieldname>type</fieldname>
+   <fieldname>title</fieldname>
+   <fieldname>question</fieldname>
+   <fieldname>preg</fieldname>
+   <fieldname>help</fieldname>
+   <fieldname>other</fieldname>
+   <fieldname>mandatory</fieldname>
+   <fieldname>question_order</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>scale_id</fieldname>
+   <fieldname>same_default</fieldname>
+   <fieldname>relevance</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[1170]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[165]]></gid>
+    <type><![CDATA[N]]></type>
+    <title><![CDATA[age]]></title>
+    <question><![CDATA[What is your age?]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1171]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[165]]></gid>
+    <type><![CDATA[G]]></type>
+    <title><![CDATA[sex]]></title>
+    <question><![CDATA[What is your sex?]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1172]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[165]]></gid>
+    <type><![CDATA[L]]></type>
+    <title><![CDATA[edlevel]]></title>
+    <question><![CDATA[What is your educational level?]]></question>
+    <preg/>
+    <help><![CDATA[Please inform the level (or equivalent) that you are currently pursuing or the last level that you have completed.]]></help>
+    <other><![CDATA[Y]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1173]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[165]]></gid>
+    <type><![CDATA[S]]></type>
+    <title><![CDATA[fieldwork]]></title>
+    <question><![CDATA[Please inform the industry you are currently working in.]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[3]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1174]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[165]]></gid>
+    <type><![CDATA[S]]></type>
+    <title><![CDATA[country]]></title>
+    <question><![CDATA[What is your country of origin?]]></question>
+    <preg/>
+    <help><![CDATA[<br />
+]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[4]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1175]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[165]]></gid>
+    <type><![CDATA[S]]></type>
+    <title><![CDATA[residence]]></title>
+    <question><![CDATA[What is your country of current residence?]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[5]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1176]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[180]]></gid>
+    <type><![CDATA[L]]></type>
+    <title><![CDATA[famgames]]></title>
+    <question><![CDATA[Please indicate your level of familiarity with digital games.]]></question>
+    <preg/>
+    <help><![CDATA[<br />
+]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1177]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[180]]></gid>
+    <type><![CDATA[L]]></type>
+    <title><![CDATA[famsgs]]></title>
+    <question><![CDATA[Please indicate your level of familiarity with Serious Games / games for learning.]]></question>
+    <preg/>
+    <help><![CDATA[<br />
+]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1178]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[170]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[AnaATMSG01]]></title>
+    <question><![CDATA[<p>
+	In this page, you will perform the analysis of the game using the ATMSG model. Please follow the instructions below.</p>
+<br />
+<p>
+	 </p>
+<p>
+	<b>Tip:</b> the frame below can be resized. Drag the bottom right edge to make it fit better in your screen.</p>
+<br />
+<div class="resizable">
+	<iframe id="analysis" src="../templates/atmsg.php?token={TOKEN}"></iframe></div>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1179]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[F]]></type>
+    <title><![CDATA[SusATMSG01]]></title>
+    <question><![CDATA[Please rate your level of agreement with the following statements.]]></question>
+    <preg/>
+    <help><![CDATA[<em>Adapted from the SU scale (developed by Digital Equipment Corporation,1986).</em>]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1180]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[PerATMSG01]]></title>
+    <question><![CDATA[Did your perception of the game change after using the ATMSG model to analyze it? If yes, what changed?]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1181]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SugATMSG01]]></title>
+    <question><![CDATA[Do you have any suggestions on how to improve the ATMSG model and its application?]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1182]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[169]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[Comp01]]></title>
+    <question><![CDATA[<span id="docs-internal-guid-5a195290-2997-8f87-b20f-bbc3986b88c6"><span style="font-size: 13px; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Which model, ATMSG or LM-GM, was easier to understand? Why?</span></span>]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1183]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[169]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[Comp02]]></title>
+    <question><![CDATA[<span id="docs-internal-guid-5a195290-2997-df32-03a8-b7727d21364a"><span style="font-size: 13px; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Which model, ATMSG or LM-GM, was easier to apply? Why?</span></span>]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1184]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[169]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[Comp03]]></title>
+    <question><![CDATA[<span id="docs-internal-guid-5a195290-2998-1b24-e2fd-50d40bab9e98"><span style="font-size: 13px; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">In your opinion, which model, ATMSG or LM-GM, gave you a better understanding of the characteristics of the games you analyzed? Why?</span></span>]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1185]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[166]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[Comments]]></title>
+    <question><![CDATA[<span id="docs-internal-guid-5a195290-2998-a836-21c5-5e9767c1a1e5"><span style="font-size: 13px; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">If you have any comments about the models or about this study, please write them down below.</span></span>]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1186]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[167]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[desATMSG01]]></title>
+    <question><![CDATA[<p>
+	In this page, you can see a PDF with the description of the ATMSG model and how to apply it to analyze serious games.</p>
+<p>
+	 </p>
+<p>
+	Please read this PDF. You can also <a href="../templates/atmsg-handout.pdf" target="_blank">download it</a> and then print it out, open it in a tablet or open it using your computer's PDF viewer.</p>
+<p>
+	<br />
+	 </p>
+<p>
+	<b>Tip:</b> You can use the zoom in your browser's PDF plugin. In addition, the frame below can be resized. Drag the bottom right edge to make it fit better in your screen.</p>
+<p>
+	 </p>
+<div class="resizable">
+	<object data="../templates/atmsg-handout.pdf" type="application/pdf">It appears you don't have a PDF plugin for this browser. Please <a href="../templates/atmsg-handout.pdf" target="_blank">click here to download the PDF file.</a></object></div>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1187]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[167]]></gid>
+    <type><![CDATA[L]]></type>
+    <title><![CDATA[cont01]]></title>
+    <question><![CDATA[Have you finished reading the PDF and are you ready to continue? Remember, you can <a href="../templates/atmsg-handout.pdf" target="_blank">download the PDF</a> to consult it later, when performing the analysis.]]></question>
+    <preg/>
+    <help><![CDATA[Remember, you can always save the questionnaire by clicking in "Resume later" (bottom) and return to it at a later time.]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1188]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[170]]></gid>
+    <type><![CDATA[L]]></type>
+    <title><![CDATA[cont02]]></title>
+    <question><![CDATA[Have you finished the ATMSG analysis and are you ready to continue? You will not be able to return to this screen.]]></question>
+    <preg/>
+    <help><![CDATA[Remember, you can always save the questionnaire by clicking on "Resume later" (bottom) and return to it at a later time.]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1189]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[171]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[desLMGM]]></title>
+    <question><![CDATA[<p>
+	In this page, you can see a PDF with the description of the LM-GM model and how to apply it to analyze serious games.</p>
+<p>
+	 </p>
+<p>
+	Please read this PDF. You can also <a href="../templates/lmgm-handout.pdf" target="_blank">download it</a> and then print it out, open it in a tablet or open it using your computer's PDF viewer.</p>
+<p>
+	<br />
+	 </p>
+<p>
+	<b>Tip: </b>You can use the zoom in your browser's PDF plugin. In addition, the frame below can be resized. Drag the bottom right edge to make it fit better in your screen.</p>
+<p>
+	 </p>
+<div class="resizable">
+	<object data="../templates/lmgm-handout.pdf" type="application/pdf">It appears you don't have a PDF plugin for this browser. Please <a href="../templates/lmgm-handout.pdf" target="_blank">click here to download the PDF file.</a></object></div>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1190]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[171]]></gid>
+    <type><![CDATA[L]]></type>
+    <title><![CDATA[cont03]]></title>
+    <question><![CDATA[Have you finished reading the PDF and are you ready to continue? Remember, you can <a href="../templates/lmgm-handout.pdf" target="_blank">download the PDF</a> to consult it later, when performing the analysis.]]></question>
+    <preg/>
+    <help><![CDATA[Remember, you can always save the questionnaire by clicking on "Resume later" (bottom) and return to it at a later time.]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1191]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[172]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[AnaLMGM]]></title>
+    <question><![CDATA[<p>
+	In this page, you will perform the analysis of the game using the LM-GM model. Please follow the instructions below.</p>
+<br />
+<p>
+	 </p>
+<p>
+	<b>Tip:</b> the frame below can be resized. Drag the bottom right edge to make it fit better in your screen.</p>
+<br />
+<div class="resizable">
+	<iframe src="../templates/lmgm.php?token={TOKEN}"></iframe></div>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1192]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[172]]></gid>
+    <type><![CDATA[L]]></type>
+    <title><![CDATA[cont04]]></title>
+    <question><![CDATA[Have you finished the LM-GM analysis and are you ready to continue? You will not be able to return to this screen.]]></question>
+    <preg/>
+    <help><![CDATA[Remember, you can always save the questionnaire by clicking on "Resume later" (bottom) and return to it at a later time.]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1193]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[F]]></type>
+    <title><![CDATA[SusLMGM]]></title>
+    <question><![CDATA[Please rate your level of agreement with the following statements.]]></question>
+    <preg/>
+    <help><![CDATA[<em>Adapted from the SU scale (developed by Digital Equipment Corporation,1986).</em>]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1194]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[PerLMGM]]></title>
+    <question><![CDATA[Did your perception of the game change after using the LM-GM model to analyze it? If yes, what changed?]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1195]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SugLMGM]]></title>
+    <question><![CDATA[Do you have any suggestions on how to improve the LM-GM model and its application?]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1196]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[174]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[desATMSG02]]></title>
+    <question><![CDATA[<p>
+	In this page, you can see a PDF with the description of the ATMSG model and how to apply it to analyze serious games.</p>
+<p>
+	 </p>
+<p>
+	Please read this PDF. You can also <a href="../templates/atmsg-handout.pdf" target="_blank">download it</a> and then print it out, open it in a tablet or open it using your computer's PDF viewer.</p>
+<p>
+	<br />
+	 </p>
+<p>
+	<b>Tip:</b> You can use the zoom in your browser's PDF plugin. In addition, the frame below can be resized. Drag the bottom right edge to make it fit better in your screen.</p>
+<p>
+	 </p>
+<div class="resizable">
+	<object data="../templates/atmsg-handout.pdf" type="application/pdf">It appears you don't have a PDF plugin for this browser. Please <a href="../templates/atmsg-handout.pdf" target="_blank">click here to download the PDF file.</a></object></div>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1197]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[174]]></gid>
+    <type><![CDATA[L]]></type>
+    <title><![CDATA[cont05]]></title>
+    <question><![CDATA[Have you finished reading the PDF and are you ready to continue? Remember, you can <a href="../templates/atmsg-handout.pdf" target="_blank">download the PDF</a> to consult it later, when performing the analysis.]]></question>
+    <preg/>
+    <help><![CDATA[Remember, you can always save the questionnaire by clicking on "Resume later" (bottom) and return to it at a later time.]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1198]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[175]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[AnaATMSG02]]></title>
+    <question><![CDATA[<p>
+	In this page, you will perform the analysis of the game using the ATMSG model. Please follow the instructions below.</p>
+<br />
+<p>
+	 </p>
+<p>
+	<b>Tip:</b> the frame below can be resized. Drag the bottom right edge to make it fit better in your screen.</p>
+<br />
+<div class="resizable">
+	<iframe src="../templates/atmsg.php?token={TOKEN}"></iframe></div>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1199]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[175]]></gid>
+    <type><![CDATA[L]]></type>
+    <title><![CDATA[cont06]]></title>
+    <question><![CDATA[Have you finished the ATMSG analysis and are you ready to continue? You will not be able to return to this screen.]]></question>
+    <preg/>
+    <help><![CDATA[Remember, you can always save the questionnaire by clicking on "Resume later" (bottom) and return to it at a later time.]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1200]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[F]]></type>
+    <title><![CDATA[SusATMSG02]]></title>
+    <question><![CDATA[Please rate your level of agreement with the following statements.]]></question>
+    <preg/>
+    <help><![CDATA[<em>Adapted from the SU scale (developed by Digital Equipment Corporation,1986).</em>]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1201]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[PerATMSG02]]></title>
+    <question><![CDATA[Did your perception of the game change after using the ATMSG model to analyze it? If yes, what changed?]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1202]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SugATMSG02]]></title>
+    <question><![CDATA[Do you have any suggestions on how to improve the ATMSG model and its application?]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1203]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[177]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[interlude01]]></title>
+    <question><![CDATA[<p style="text-align: center;">
+	<br />
+	 </p>
+<p style="text-align: center;">
+	<span style="font-size:14px;">If you have not done so, please play the game "Senior PM" now.</span></p>
+<p style="text-align: center;">
+	 </p>
+<p style="text-align: center;">
+	<span style="font-size:14px;">You can register to play the game for free online at <a href="http://sr.thatpmgame.com/register/" target="_blank">http://sr.thatpmgame.com/register/</a>.</span></p>
+<br />
+<p>
+	Even if you know the game, play it again for at least 10 minutes, so that you remember the game in detail. This will be needed for this evaluation.</p>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1204]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[178]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[interlude02]]></title>
+    <question><![CDATA[This is a small break before we proceed to the next block.
+<p>
+	 </p>
+<p>
+	Remember, you can pause this questionnaire at any time by clicking on the button on the bottom, "Resume later".</p>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1205]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[179]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[interlude03]]></title>
+    <question><![CDATA[<p>
+	This is a small break before we proceed to the next block.</p>
+<p>
+	 </p>
+<p>
+	Remember, you can pause this questionnaire at any time by clicking on the button on the bottom, "Resume later".</p>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1206]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[177]]></gid>
+    <type><![CDATA[L]]></type>
+    <title><![CDATA[cont00]]></title>
+    <question><![CDATA[Have you finished playing the game for at least 10 minutes and are you ready to continue?]]></question>
+    <preg/>
+    <help><![CDATA[Remember, you can always save the questionnaire by clicking in "Resume later" (bottom) and return to it at a later time.]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[Y]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1207]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[181]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[NotTargetGroup]]></title>
+    <question><![CDATA[<p>
+	Thank you for your interest in participating in our research!</p>
+<p>
+	 </p>
+<p>
+	We are looking for participants with experience with serious games / games for learning. Since you indicated that you do not have experience with serious games, unfortunately we would not be able to use your responses.</p>
+<p>
+	 </p>
+<p>
+	We kindly ask you to forward the invitation to this questionnaire to people you may know that might fit the profile we are looking for.</p>
+<p>
+	 </p>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[0]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1208]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[166]]></gid>
+    <type><![CDATA[M]]></type>
+    <title><![CDATA[MailingList]]></title>
+    <question><![CDATA[Would you be interested in participating in other studies about serious games in the future? Please check the box if yes.]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1209]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[181]]></gid>
+    <type><![CDATA[M]]></type>
+    <title><![CDATA[MailingList2]]></title>
+    <question><![CDATA[Would you be interested in participating in other studies about serious games in the future? Please check the box if yes.]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1210]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[165]]></gid>
+    <type><![CDATA[*]]></type>
+    <title><![CDATA[groupassignment]]></title>
+    <question><![CDATA[{if(is_empty(groupassignment),rand(1,2),groupassignment)}]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[6]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[1211]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[166]]></gid>
+    <type><![CDATA[X]]></type>
+    <title><![CDATA[vouchers]]></title>
+    <question><![CDATA[<p style="text-align: center;">
+	<span style="font-size: 14px;">You are ready to submit your questionnaire.</span></p>
+<p style="text-align: center;">
+	 </p>
+]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+  </rows>
+ </questions>
+ <subquestions>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>parent_qid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>gid</fieldname>
+   <fieldname>type</fieldname>
+   <fieldname>title</fieldname>
+   <fieldname>question</fieldname>
+   <fieldname>preg</fieldname>
+   <fieldname>help</fieldname>
+   <fieldname>other</fieldname>
+   <fieldname>mandatory</fieldname>
+   <fieldname>question_order</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>scale_id</fieldname>
+   <fieldname>same_default</fieldname>
+   <fieldname>relevance</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[1212]]></qid>
+    <parent_qid><![CDATA[1179]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ01]]></title>
+    <question><![CDATA[I think that I would like to use the ATMSG model if/when I study games for learning]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1213]]></qid>
+    <parent_qid><![CDATA[1179]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ02]]></title>
+    <question><![CDATA[I found the ATMSG model unnecessarily complex]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1214]]></qid>
+    <parent_qid><![CDATA[1179]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ03]]></title>
+    <question><![CDATA[I thought the ATMSG model was easy to use]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[3]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1215]]></qid>
+    <parent_qid><![CDATA[1179]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ04]]></title>
+    <question><![CDATA[I think that I would need the support of an expert to be able to use the ATMSG model]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[4]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1216]]></qid>
+    <parent_qid><![CDATA[1179]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ05]]></title>
+    <question><![CDATA[I found the various steps in the ATMSG model were well integrated]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[5]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1217]]></qid>
+    <parent_qid><![CDATA[1179]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ06]]></title>
+    <question><![CDATA[I thought there was too much inconsistency in the ATMSG model]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[6]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1218]]></qid>
+    <parent_qid><![CDATA[1179]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ07]]></title>
+    <question><![CDATA[I would imagine that most people would learn to use the ATMSG model very quickly]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[7]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1219]]></qid>
+    <parent_qid><![CDATA[1179]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ08]]></title>
+    <question><![CDATA[I found the ATMSG model very cumbersome to use]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[8]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1220]]></qid>
+    <parent_qid><![CDATA[1179]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ09]]></title>
+    <question><![CDATA[I felt very confident using the ATMSG model]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[9]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1221]]></qid>
+    <parent_qid><![CDATA[1179]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[168]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ10]]></title>
+    <question><![CDATA[I needed to learn a lot of things before I could get going with the ATMSG model]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[10]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1222]]></qid>
+    <parent_qid><![CDATA[1193]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ01]]></title>
+    <question><![CDATA[I think that I would like to use the LM-GM model if/when I study games for learning]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1223]]></qid>
+    <parent_qid><![CDATA[1193]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ02]]></title>
+    <question><![CDATA[I found the LM-GM model unnecessarily complex]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1224]]></qid>
+    <parent_qid><![CDATA[1193]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ03]]></title>
+    <question><![CDATA[I thought the LM-GM model was easy to use]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[3]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1225]]></qid>
+    <parent_qid><![CDATA[1193]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ04]]></title>
+    <question><![CDATA[I think that I would need the support of an expert to be able to use the LM-GM model]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[4]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1226]]></qid>
+    <parent_qid><![CDATA[1193]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ05]]></title>
+    <question><![CDATA[I found the various steps in the LM-GM model were well integrated]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[5]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1227]]></qid>
+    <parent_qid><![CDATA[1193]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ06]]></title>
+    <question><![CDATA[I thought there was too much inconsistency in the LM-GM model]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[6]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1228]]></qid>
+    <parent_qid><![CDATA[1193]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ07]]></title>
+    <question><![CDATA[I would imagine that most people would learn to use the LM-GM model very quickly]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[7]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1229]]></qid>
+    <parent_qid><![CDATA[1193]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ08]]></title>
+    <question><![CDATA[I found the LM-GM model very cumbersome to use]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[8]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1230]]></qid>
+    <parent_qid><![CDATA[1193]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ09]]></title>
+    <question><![CDATA[I felt very confident using the LM-GM model]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[9]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1231]]></qid>
+    <parent_qid><![CDATA[1193]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[173]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ10]]></title>
+    <question><![CDATA[I needed to learn a lot of things before I could get going with the LM-GM model]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[10]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1232]]></qid>
+    <parent_qid><![CDATA[1200]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ01]]></title>
+    <question><![CDATA[I think that I would like to use the ATMSG model if/when I study games for learning]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1233]]></qid>
+    <parent_qid><![CDATA[1200]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ02]]></title>
+    <question><![CDATA[I found the ATMSG model unnecessarily complex]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1234]]></qid>
+    <parent_qid><![CDATA[1200]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ03]]></title>
+    <question><![CDATA[I thought the ATMSG model was easy to use]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[3]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1235]]></qid>
+    <parent_qid><![CDATA[1200]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ04]]></title>
+    <question><![CDATA[I think that I would need the support of an expert to be able to use the ATMSG model]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[4]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1236]]></qid>
+    <parent_qid><![CDATA[1200]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ05]]></title>
+    <question><![CDATA[I found the various steps in the ATMSG model were well integrated]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[5]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1237]]></qid>
+    <parent_qid><![CDATA[1200]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ06]]></title>
+    <question><![CDATA[I thought there was too much inconsistency in the ATMSG model]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[6]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1238]]></qid>
+    <parent_qid><![CDATA[1200]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ07]]></title>
+    <question><![CDATA[I would imagine that most people would learn to use the ATMSG model very quickly]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[7]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1239]]></qid>
+    <parent_qid><![CDATA[1200]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ08]]></title>
+    <question><![CDATA[I found the ATMSG model very cumbersome to use]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[8]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1240]]></qid>
+    <parent_qid><![CDATA[1200]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ09]]></title>
+    <question><![CDATA[I felt very confident using the ATMSG model]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[9]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1241]]></qid>
+    <parent_qid><![CDATA[1200]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[176]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ10]]></title>
+    <question><![CDATA[I needed to learn a lot of things before I could get going with the ATMSG model]]></question>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[10]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1242]]></qid>
+    <parent_qid><![CDATA[1208]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[166]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ001]]></title>
+    <question><![CDATA[Yes, I would like to participate in future studies!]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+   <row>
+    <qid><![CDATA[1243]]></qid>
+    <parent_qid><![CDATA[1209]]></parent_qid>
+    <sid><![CDATA[782678]]></sid>
+    <gid><![CDATA[181]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[SQ001]]></title>
+    <question><![CDATA[Yes, I would like to participate in future studies!]]></question>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[en]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+   </row>
+  </rows>
+ </subquestions>
+ <question_attributes>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>attribute</fieldname>
+   <fieldname>value</fieldname>
+   <fieldname>language</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[1179]]></qid>
+    <attribute><![CDATA[answer_width]]></attribute>
+    <value><![CDATA[50]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[1193]]></qid>
+    <attribute><![CDATA[answer_width]]></attribute>
+    <value><![CDATA[50]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[1200]]></qid>
+    <attribute><![CDATA[answer_width]]></attribute>
+    <value><![CDATA[50]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[1210]]></qid>
+    <attribute><![CDATA[hidden]]></attribute>
+    <value><![CDATA[1]]></value>
+   </row>
+  </rows>
+ </question_attributes>
+ <surveys>
+  <fields>
+   <fieldname>sid</fieldname>
+   <fieldname>admin</fieldname>
+   <fieldname>expires</fieldname>
+   <fieldname>startdate</fieldname>
+   <fieldname>adminemail</fieldname>
+   <fieldname>anonymized</fieldname>
+   <fieldname>faxto</fieldname>
+   <fieldname>format</fieldname>
+   <fieldname>savetimings</fieldname>
+   <fieldname>template</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>additional_languages</fieldname>
+   <fieldname>datestamp</fieldname>
+   <fieldname>usecookie</fieldname>
+   <fieldname>allowregister</fieldname>
+   <fieldname>allowsave</fieldname>
+   <fieldname>autonumber_start</fieldname>
+   <fieldname>autoredirect</fieldname>
+   <fieldname>allowprev</fieldname>
+   <fieldname>printanswers</fieldname>
+   <fieldname>ipaddr</fieldname>
+   <fieldname>refurl</fieldname>
+   <fieldname>publicstatistics</fieldname>
+   <fieldname>publicgraphs</fieldname>
+   <fieldname>listpublic</fieldname>
+   <fieldname>htmlemail</fieldname>
+   <fieldname>sendconfirmation</fieldname>
+   <fieldname>tokenanswerspersistence</fieldname>
+   <fieldname>assessments</fieldname>
+   <fieldname>usecaptcha</fieldname>
+   <fieldname>usetokens</fieldname>
+   <fieldname>bounce_email</fieldname>
+   <fieldname>attributedescriptions</fieldname>
+   <fieldname>emailresponseto</fieldname>
+   <fieldname>emailnotificationto</fieldname>
+   <fieldname>tokenlength</fieldname>
+   <fieldname>showxquestions</fieldname>
+   <fieldname>showgroupinfo</fieldname>
+   <fieldname>shownoanswer</fieldname>
+   <fieldname>showqnumcode</fieldname>
+   <fieldname>bouncetime</fieldname>
+   <fieldname>bounceprocessing</fieldname>
+   <fieldname>bounceaccounttype</fieldname>
+   <fieldname>bounceaccounthost</fieldname>
+   <fieldname>bounceaccountpass</fieldname>
+   <fieldname>bounceaccountencryption</fieldname>
+   <fieldname>bounceaccountuser</fieldname>
+   <fieldname>showwelcome</fieldname>
+   <fieldname>showprogress</fieldname>
+   <fieldname>navigationdelay</fieldname>
+   <fieldname>nokeyboard</fieldname>
+   <fieldname>alloweditaftercompletion</fieldname>
+   <fieldname>googleanalyticsstyle</fieldname>
+   <fieldname>googleanalyticsapikey</fieldname>
+   <fieldname>questionindex</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <sid><![CDATA[782678]]></sid>
+    <admin/>
+    <adminemail/>
+    <anonymized><![CDATA[N]]></anonymized>
+    <faxto/>
+    <format><![CDATA[G]]></format>
+    <savetimings><![CDATA[Y]]></savetimings>
+    <template><![CDATA[default]]></template>
+    <language><![CDATA[en]]></language>
+    <additional_languages/>
+    <datestamp><![CDATA[Y]]></datestamp>
+    <usecookie><![CDATA[N]]></usecookie>
+    <allowregister><![CDATA[N]]></allowregister>
+    <allowsave><![CDATA[Y]]></allowsave>
+    <autonumber_start><![CDATA[0]]></autonumber_start>
+    <autoredirect><![CDATA[N]]></autoredirect>
+    <allowprev><![CDATA[Y]]></allowprev>
+    <printanswers><![CDATA[N]]></printanswers>
+    <ipaddr><![CDATA[N]]></ipaddr>
+    <refurl><![CDATA[N]]></refurl>
+    <publicstatistics><![CDATA[N]]></publicstatistics>
+    <publicgraphs><![CDATA[N]]></publicgraphs>
+    <listpublic><![CDATA[N]]></listpublic>
+    <htmlemail><![CDATA[Y]]></htmlemail>
+    <sendconfirmation><![CDATA[Y]]></sendconfirmation>
+    <tokenanswerspersistence><![CDATA[Y]]></tokenanswerspersistence>
+    <assessments><![CDATA[N]]></assessments>
+    <usecaptcha><![CDATA[N]]></usecaptcha>
+    <usetokens><![CDATA[N]]></usetokens>
+    <bounce_email/>
+    <attributedescriptions><![CDATA[[]]]></attributedescriptions>
+    <emailresponseto/>
+    <emailnotificationto/>
+    <tokenlength><![CDATA[15]]></tokenlength>
+    <showxquestions><![CDATA[N]]></showxquestions>
+    <showgroupinfo><![CDATA[B]]></showgroupinfo>
+    <shownoanswer><![CDATA[Y]]></shownoanswer>
+    <showqnumcode><![CDATA[X]]></showqnumcode>
+    <bounceprocessing><![CDATA[N]]></bounceprocessing>
+    <showwelcome><![CDATA[Y]]></showwelcome>
+    <showprogress><![CDATA[N]]></showprogress>
+    <navigationdelay><![CDATA[0]]></navigationdelay>
+    <nokeyboard><![CDATA[N]]></nokeyboard>
+    <alloweditaftercompletion><![CDATA[N]]></alloweditaftercompletion>
+    <googleanalyticsstyle><![CDATA[0]]></googleanalyticsstyle>
+    <googleanalyticsapikey/>
+    <questionindex><![CDATA[0]]></questionindex>
+   </row>
+  </rows>
+ </surveys>
+ <surveys_languagesettings>
+  <fields>
+   <fieldname>surveyls_survey_id</fieldname>
+   <fieldname>surveyls_language</fieldname>
+   <fieldname>surveyls_title</fieldname>
+   <fieldname>surveyls_description</fieldname>
+   <fieldname>surveyls_welcometext</fieldname>
+   <fieldname>surveyls_endtext</fieldname>
+   <fieldname>surveyls_url</fieldname>
+   <fieldname>surveyls_urldescription</fieldname>
+   <fieldname>surveyls_email_invite_subj</fieldname>
+   <fieldname>surveyls_email_invite</fieldname>
+   <fieldname>surveyls_email_remind_subj</fieldname>
+   <fieldname>surveyls_email_remind</fieldname>
+   <fieldname>surveyls_email_register_subj</fieldname>
+   <fieldname>surveyls_email_register</fieldname>
+   <fieldname>surveyls_email_confirm_subj</fieldname>
+   <fieldname>surveyls_email_confirm</fieldname>
+   <fieldname>surveyls_dateformat</fieldname>
+   <fieldname>surveyls_attributecaptions</fieldname>
+   <fieldname>email_admin_notification_subj</fieldname>
+   <fieldname>email_admin_notification</fieldname>
+   <fieldname>email_admin_responses_subj</fieldname>
+   <fieldname>email_admin_responses</fieldname>
+   <fieldname>surveyls_numberformat</fieldname>
+   <fieldname>attachments</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <surveyls_survey_id><![CDATA[782678]]></surveyls_survey_id>
+    <surveyls_language><![CDATA[en]]></surveyls_language>
+    <surveyls_title><![CDATA[SGModels Survey]]></surveyls_title>
+    <surveyls_description><![CDATA[Questionnaire for evaluating the ATMSG and the LM-GM models for serious game analysis.]]></surveyls_description>
+    <surveyls_welcometext><![CDATA[<center>
+	<div style="width: 600px">
+		<p>
+			Welcome, and thank you for your participation in this study,<br />
+			which aims to evaluate and compare two models for serious games analysis.</p>
+		<p>
+			 </p>
+		<p style="text-align: left">
+			This is how this test is structured:</p>
+		<ul style="text-align: left">
+			<li>
+				You will be asked to play a game for at least 10 minutes.</li>
+			<li>
+				You will be presented with one of the models for serious games analysis.</li>
+			<li>
+				You will be asked to analyze the game using the first model.</li>
+			<li>
+				You will be asked a few questions about the model.</li>
+			<li>
+				You will be presented the second model for serious games analysis.</li>
+			<li>
+				You will be asked to analyze the same game using the second model.</li>
+			<li>
+				You will be asked a few questions about the second model.</li>
+			<li>
+				You will be asked a few questions comparing both models.</li>
+		</ul>
+		<p>
+			 </p>
+		<p>
+			The whole procedure is expected to last at most 3 hours. </p>
+		<p>
+			 </p>
+		<p>
+			 </p>
+		<p style="text-align: center;">
+			<span style="font-size: 16px;"><b>You can stop the questionnaire at any time and return to it later.</b></span><br />
+			<br />
+			If you are returning to your questionnaire, use the "Load unfinished survey" button, <br />
+			on the bottom of the screen.</p>
+		<p style="text-align: center;">
+			 </p>
+		<p style="text-align: center;">
+			<span style="font-size: 16px; line-height:20px;"><b><span style="color:#ff0000;">Do not try to use the "Back" button of your browser!</span><br />
+			Doing so might cause you to lose your answers!<br />
+			Use the questionnaire's navigation buttons instead.</b></span></p>
+		<p>
+			 </p>
+		<p>
+			<strong>Please click on "Next" to start.</strong></p>
+	</div>
+	<p>
+		 </p>
+</center>
+]]></surveyls_welcometext>
+    <surveyls_endtext><![CDATA[<p>
+	<span style="font-size: 16px;">Thank you for your participation in this questionnaire! We really appreciate your help. </span></p>
+<p>
+	 </p>
+]]></surveyls_endtext>
+    <surveyls_url/>
+    <surveyls_urldescription/>
+    <surveyls_email_invite_subj><![CDATA[Invitation to participate in a survey]]></surveyls_email_invite_subj>
+    <surveyls_email_invite><![CDATA[Dear {FIRSTNAME},<br />
+<br />
+you have been invited to participate in a survey.<br />
+<br />
+The survey is titled:<br />
+"{SURVEYNAME}"<br />
+<br />
+"{SURVEYDESCRIPTION}"<br />
+<br />
+To participate, please click on the link below.<br />
+<br />
+Sincerely,<br />
+<br />
+{ADMINNAME} ({ADMINEMAIL})<br />
+<br />
+----------------------------------------------<br />
+Click here to do the survey:<br />
+{SURVEYURL}<br />
+<br />
+If you do not want to participate in this survey and don't want to receive any more invitations please click the following link:<br />
+{OPTOUTURL}<br />
+<br />
+If you are blacklisted but want to participate in this survey and want to receive invitations please click the following link:<br />
+{OPTINURL}]]></surveyls_email_invite>
+    <surveyls_email_remind_subj><![CDATA[Reminder to participate in a survey]]></surveyls_email_remind_subj>
+    <surveyls_email_remind><![CDATA[Dear {FIRSTNAME},<br />
+<br />
+Recently we invited you to participate in a survey.<br />
+<br />
+We note that you have not yet completed the survey, and wish to remind you that the survey is still available should you wish to take part.<br />
+<br />
+The survey is titled:<br />
+"{SURVEYNAME}"<br />
+<br />
+"{SURVEYDESCRIPTION}"<br />
+<br />
+To participate, please click on the link below.<br />
+<br />
+Sincerely,<br />
+<br />
+{ADMINNAME} ({ADMINEMAIL})<br />
+<br />
+----------------------------------------------<br />
+Click here to do the survey:<br />
+{SURVEYURL}<br />
+<br />
+If you do not want to participate in this survey and don't want to receive any more invitations please click the following link:<br />
+{OPTOUTURL}]]></surveyls_email_remind>
+    <surveyls_email_register_subj><![CDATA[Survey registration confirmation]]></surveyls_email_register_subj>
+    <surveyls_email_register><![CDATA[Dear {FIRSTNAME},<br />
+<br />
+You, or someone using your email address, have registered to participate in an online survey titled {SURVEYNAME}.<br />
+<br />
+To complete this survey, click on the following URL:<br />
+<br />
+{SURVEYURL}<br />
+<br />
+If you have any questions about this survey, or if you did not register to participate and believe this email is in error, please contact {ADMINNAME} at {ADMINEMAIL}.]]></surveyls_email_register>
+    <surveyls_email_confirm_subj><![CDATA[Confirmation of your participation in our survey]]></surveyls_email_confirm_subj>
+    <surveyls_email_confirm><![CDATA[Dear {FIRSTNAME},<br />
+<br />
+this email is to confirm that you have completed the survey titled {SURVEYNAME} and your response has been saved. Thank you for participating.<br />
+<br />
+If you have any further questions about this email, please contact {ADMINNAME} on {ADMINEMAIL}.<br />
+<br />
+Sincerely,<br />
+<br />
+{ADMINNAME}]]></surveyls_email_confirm>
+    <surveyls_dateformat><![CDATA[2]]></surveyls_dateformat>
+    <surveyls_attributecaptions><![CDATA[{"attribute_1":"Group","attribute_2":"Participant ID"}]]></surveyls_attributecaptions>
+    <email_admin_notification_subj><![CDATA[Response submission for survey {SURVEYNAME}]]></email_admin_notification_subj>
+    <email_admin_notification><![CDATA[Hello,<br />
+<br />
+A new response was submitted for your survey '{SURVEYNAME}'.<br />
+<br />
+Click the following link to reload the survey:<br />
+{RELOADURL}<br />
+<br />
+Click the following link to see the individual response:<br />
+{VIEWRESPONSEURL}<br />
+<br />
+Click the following link to edit the individual response:<br />
+{EDITRESPONSEURL}<br />
+<br />
+View statistics by clicking here:<br />
+{STATISTICSURL}]]></email_admin_notification>
+    <email_admin_responses_subj><![CDATA[Response submission for survey {SURVEYNAME} with results]]></email_admin_responses_subj>
+    <email_admin_responses><![CDATA[Hello,<br />
+<br />
+A new response was submitted for your survey '{SURVEYNAME}'.<br />
+<br />
+Click the following link to reload the survey:<br />
+{RELOADURL}<br />
+<br />
+Click the following link to see the individual response:<br />
+{VIEWRESPONSEURL}<br />
+<br />
+Click the following link to edit the individual response:<br />
+{EDITRESPONSEURL}<br />
+<br />
+View statistics by clicking here:<br />
+{STATISTICSURL}<br />
+<br />
+<br />
+The following answers were given by the participant:<br />
+{ANSWERTABLE}]]></email_admin_responses>
+    <surveyls_numberformat><![CDATA[0]]></surveyls_numberformat>
+   </row>
+  </rows>
+ </surveys_languagesettings>
+</document>

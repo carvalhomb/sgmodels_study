@@ -21,7 +21,7 @@ LATEXMK_FLAGS :=
 RNWTEX = $(RNWFILES:.Rnw=.tex)
 ROUTFILES = $(RFILES:.R=.Rout)
 RDATAFILES= $(RFILES:.R=.Rdata)
-RMDFILE=report
+RMDFILE=Report
 SCRIPTDIR=R
 
 .PHONY:report clean clearcache cleanall
@@ -30,7 +30,7 @@ tex: $(RDATAFILES) $(ALLTEX)
 
 
 report:
-	Rscript -e "require(knitr); require(markdown); knit('$(SCRIPTDIR)/$(RMDFILE).Rmd', '$(RMDFILE).md'); markdownToHTML('$(RMDFILE).md', '$(RMDFILE).html',  stylesheet='includes/style.css', options=c('use_xhtml')); browseURL(paste('file://', file.path(getwd(),'$(RMDFILE).html'), sep=''))"
+	Rscript -e "require(knitr); require(markdown); knit('$(SCRIPTDIR)/$(RMDFILE).Rmd', '$(RMDFILE).md'); markdownToHTML('$(RMDFILE).md', '$(RMDFILE).html',  stylesheet='includes/style.css', options=c('use_xhtml', 'toc')); browseURL(paste('file://', file.path(getwd(),'$(RMDFILE).html'), sep=''))"
 
 
 clean:

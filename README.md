@@ -18,7 +18,7 @@ Here is what you will find in this repository:
 :   Files needed to generate the report (CSS style)
 
 **instrument/**
-:   LimeSurvey questionnaire applied in the online study plus templates.
+:   LimeSurvey questionnaire applied in the online study. PDFs with explanations of the models and examples. Templates for Google Docs. PHP files needed to embed the Google Docs inside Limesurvey (as iframes), matching a token in the Limesurvey token table to a set of Google Docs templates (which have to be created manually, and the hashed IDs of the documents added to a SQL database). 
 
 **R/**
 :   The R scripts that generate the report and the analyses
@@ -29,7 +29,7 @@ Here is what you will find in this repository:
 *Makefile*
 :   GNU Makefile that can be used to re-generate the report.
 
-*report.html*
+*Report.html*
 :   The output of the R script with the analysis of the data. If you just want to look at the full report from the data, this is the file you want to open.
 
 ## Build the report
