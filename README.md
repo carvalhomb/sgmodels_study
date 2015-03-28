@@ -2,7 +2,7 @@
 
 Repository for data and R scripts used in study on two models for analysis of serious games.
 
-The files in this repository allow you to re-generate the file *Report.hmtl* and see the data analyses yourself.
+The files in this repository allow you to re-generate the file *Report.html* and see the data analyses yourself.
 
 ## Build the report
 
@@ -12,7 +12,7 @@ To generate the report yourself, you can use the Makefile. Just run (in UNIX or 
 make report
 ```
 
-You can also use RStudio and Knitr to knit the script found in **R/report.Rmd**
+You can also use RStudio and Knitr to knit the script found in *R/report.Rmd*
 
 ## Folder organization
 
