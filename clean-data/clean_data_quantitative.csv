@@ -1,0 +1,33 @@
+id,group,age,gender,edlevel,study,country,residence,gamefam,sgsfam,A_Game,A_analysis,A_SUS01,A_SUS02,A_SUS03,A_SUS04,A_SUS05,A_SUS06,A_SUS07,A_SUS08,A_SUS09,A_SUS10,L_Game,L_analysis,L_SUS01,L_SUS02,L_SUS03,L_SUS04,L_SUS05,L_SUS06,L_SUS07,L_SUS08,L_SUS09,L_SUS10
+LOC201,C,23,M,A3,Industrial Engineering and Management,Germany,Germany,3,3,Vikings,8,3,4,2,3,3,2,4,4,2,4,Senior PM Game,10,3,2,3,2,4,2,3,3,2,4
+LOC202,C,22,M,A3,Industrial Engineering and Management,Germany,Germany,3,2,Vikings,10,2,4,2,5,3,4,2,4,2,5,Senior PM Game,8,3,2,4,4,3,2,4,3,3,4
+LOC203,C,23,M,A3,Industrial Engineering and Management,Germany,Germany,3,2,Vikings,8,3,4,2,3,2,3,4,3,3,4,Senior PM Game,8,4,2,3,3,3,2,4,4,3,2
+LOC205,C,19,M,A3,Industrial Engineering and Management,Germany,Germany,5,2,Vikings,8,3,1,5,1,4,2,5,1,5,1,Senior PM Game,9,4,3,4,1,3,1,4,3,4,1
+LOC206,C,20,M,A3,Industrial Engineering and Management,Germany,Germany,3,2,Vikings,8,3,4,4,2,4,1,4,3,4,1,Senior PM Game,8,1,2,1,3,2,2,1,4,2,2
+LOC208,C,21,M,A3,Informatic,Germany,Germany,3,2,Vikings,8,3,2,4,2,3,3,4,4,4,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC211,B,25,M,A3,Industrial Engineering and Management,Germany,Germany,5,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Vikings,5,2,3,2,4,3,3,2,3,2,4
+LOC212,B,19,F,A3,Industrial Engineering and Management,Germany,Germany,3,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Vikings,7,4,2,4,2,2,3,4,1,4,1
+LOC213,B,22,M,A3,Industrial Engineering and Management,Germany,Germany,3,2,Senior PM Game,5,4,2,3,3,4,3,2,3,2,2,Vikings,8,4,1,3,4,3,3,4,3,4,2
+LOC214,B,20,M,A3,Industrial Engineering and Management,Germany,Germany,5,2,Senior PM Game,8,5,2,3,4,4,3,2,4,2,2,Vikings,5,4,1,4,3,4,3,5,4,3,2
+LOC215,B,19,M,A3,Industrial Engineering and Management,Germany,Germany,5,3,Senior PM Game,3,4,2,3,1,4,2,4,3,NA,1,Vikings,8,3,2,5,3,4,3,4,3,3,2
+LOC217,C,19,M,A3,Industrial Engineering and Management,Germany,Germany,5,2,Vikings,8,4,1,5,1,5,1,5,2,5,1,Senior PM Game,10,3,2,3,1,2,1,2,3,3,1
+LOC218,B,21,M,A3,Industrial Engineering and Management,Germany,Germany,3,2,Senior PM Game,5,4,2,3,4,3,3,3,4,2,3,Vikings,8,4,1,4,3,3,4,5,3,3,2
+LOC219,C,23,M,A3,Industrial Engineering and Management,Germany,Germany,3,2,Vikings,5,3,4,2,5,3,3,2,3,2,4,Senior PM Game,4,3,2,4,3,3,2,4,3,3,2
+LOC220,C,23,F,A3,Industrial Engineering and Management,Germany,Germany,3,2,Vikings,7,2,4,2,5,3,3,2,3,2,4,Senior PM Game,4,4,2,4,2,3,3,3,2,4,3
+LOC101,A,23,M,A4,Electronic Engineering,Italy,Italy,3,3,MarketPlace,6,4,4,2,3,5,2,3,3,3,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC102,A,22,M,A4,Electronic Engineering,Italy,Italy,3,2,MarketPlace,7,3,4,4,4,3,2,5,4,3,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC103,A,34,M,A5,Computer Science,Thailand,Italy,5,5,MarketPlace,7,5,3,4,4,4,2,3,2,3,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC104,A,23,M,A4,Electronic Engineering,Italy,Italy,4,2,MarketPlace,4,3,2,4,2,4,1,4,3,3,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC105,A,23,M,A4,Electronic Engineering,Italy,Italy,5,2,MarketPlace,7,4,2,2,2,2,2,2,3,4,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC106,A,22,M,A4,Electronic Engineering,Italy,Italy,5,3,MarketPlace,6,2,4,2,4,3,3,3,4,2,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC107,A,23,F,A4,Electronic Engineering,Italy,Italy,5,3,MarketPlace,10,2,1,3,2,3,1,3,2,2,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC108,A,22,M,A4,Electronic Engineering,Italy,Italy,3,3,MarketPlace,7,3,4,3,4,3,2,3,5,2,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC109,A,23,M,A4,Electronic Engineering,Italy,Italy,3,2,MarketPlace,8,NA,1,5,2,4,2,3,3,3,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC110,A,23,M,A4,Electronic Engineering,Italy,Italy,5,2,MarketPlace,7,4,3,3,4,5,1,2,2,3,4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC111,A,22,M,A4,Electronic Engineering,Italy,Italy,4,2,MarketPlace,8,3,2,5,2,4,2,4,3,3,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC112,A,22,M,A4,Electronic Engineering,Italy,Italy,5,3,MarketPlace,10,4,2,3,1,3,2,4,2,3,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LOC113,A,23,M,A4,Electronic Engineering,Italy,Italy,5,3,MarketPlace,6,3,1,5,2,3,2,3,4,3,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+ONL101,D,28,M,A2,freelancer,Italy,Italy,5,5,Senior PM Game,NA,5,1,4,1,4,1,2,1,4,2,Senior PM Game,NA,5,1,5,1,5,1,4,1,4,2
+ONL103,E,23,M,A4,"IT expert, digital data protection",Italy,Italy,5,4,Senior PM Game,NA,4,3,4,2,4,2,4,2,5,2,Senior PM Game,NA,4,2,3,3,5,2,2,4,2,2
+ONL104,E,44,M,A6,University,Italy,Italy,4,5,Senior PM Game,NA,4,3,3,2,3,2,2,3,3,2,Senior PM Game,NA,3,3,1,5,2,3,1,3,4,3
+ONL105,D,28,M,A4,redated,Germany,Germany,5,5,Senior PM Game,NA,4,3,4,1,5,4,4,3,4,2,Senior PM Game,NA,5,2,2,1,4,2,4,3,4,3
