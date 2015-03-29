@@ -24,21 +24,27 @@ RDATAFILES= $(RFILES:.R=.Rdata)
 RMDFILE=Report
 SCRIPTDIR=R
 
+R_OPTS=--no-save --no-restore --no-init-file --no-site-file # vanilla, but with --environ
+
 .PHONY:report clean clearcache cleanall
 pdf: $(MAINPDF)
 tex: $(RDATAFILES) $(ALLTEX) 
 
 
-report:
-	Rscript -e "require(knitr); require(markdown); knit('$(SCRIPTDIR)/$(RMDFILE).Rmd', '$(RMDFILE).md'); markdownToHTML('$(RMDFILE).md', '$(RMDFILE).html',  stylesheet='includes/style.css', options=c('use_xhtml', 'toc')); browseURL(paste('file://', file.path(getwd(),'$(RMDFILE).html'), sep=''))"
+report: $(SCRIPTDIR)/$(RMDFILE).Rmd
+#	Rscript -e "require(knitr); require(markdown); knit('$(SCRIPTDIR)/$(RMDFILE).Rmd'); markdownToHTML('$(RMDFILE).md', '$(RMDFILE).html',  stylesheet='includes/style.css', options=c('toc','')); browseURL(paste('file://', file.path(getwd(),'$(RMDFILE).html'), sep=''))"
+	R ${R_OPTS} -e "rmarkdown::render('$(SCRIPTDIR)/$(RMDFILE).Rmd','md_document')"
+	R ${R_OPTS} -e "markdown::markdownToHTML('$(SCRIPTDIR)/$(RMDFILE).md','$(RMDFILE).html', stylesheet='$(SCRIPTDIR)/includes/style.css')"
+	-rm -f $(SCRIPTDIR)/$(RMDFILE).md
 
 
 clean:
-	-rm -f $(RMDFILE).md
-	-rm -rf $(FIGUREDIR)
+	-rm -f $(SCRIPTDIR)/$(RMDFILE).md
+	-rm -rf $(SCRIPTDIR)/$(FIGUREDIR)
+	-rm -rf $(SCRIPTDIR)/$(RMDFILE)_files
 	
 clearcache:
-	-rm -rf cache
+	-rm -rf $(SCRIPTDIR)/$(RMDFILE)_cache
   
 cleanall: clean clearcache
 

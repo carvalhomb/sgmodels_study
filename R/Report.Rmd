@@ -1,0 +1,477 @@
+---
+title: "Report - SG Models study"
+output:
+  html_document:
+    fig_caption: yes
+    keep_md: yes
+    number_sections: yes
+    toc: yes
+  md_document:
+    toc: no
+---
+
+
+```{r setup, echo=FALSE, include=FALSE, cache=TRUE}
+
+require(reshape) # For renaming data
+require(reshape2) # For melting data
+require(psych) # For describeBy functions
+require(doBy) # Needed by summaryBy
+require(ez) # For the ANOVAs
+require(car) # For the ANOVAs
+require(gridExtra) # For arranging plots in grids
+require(afex) # For nice.anova tables
+require(ggplot2) #For the plots
+require(likert) #for building beautiful likert graphs
+require(xtable) #Needed by knitr
+require(knitr) # For making tables for the report
+require(vcd) #Structables
+
+
+#require(lawstat)
+#require(heplots)
+#require(devtools)
+
+
+# to adhere to the sum-to-zero convention for effect weights, we run these options first. 
+# This is so that the sum of squares calculations match what we get, for example, in SPSS, 
+# or in many common textbooks on ANOVA (e.g. Maxwell & Delaney)
+options(contrasts=c("contr.sum","contr.poly"))
+options(digits = 4) 
+
+# Load functions from R scripts
+source('quantitative_analysis.R', local=TRUE, verbose=FALSE)
+
+### Quantitative data processing
+
+# Load the data
+quantdata <- read.csv("../clean-data/clean_data_quantitative.csv", na.strings=c(""," ","NA"))
+
+# Clean the data
+quantdata <- cleanquantdata(quantdata)
+quantdata <- scoresus(quantdata)
+quantdata <- addlocation(quantdata)
+
+# Getting descriptive info about participants
+uniquedata <- removeduplicates(quantdata)
+
+#Isolating results from ATMSG analyses only
+ATMSG_data <- quantdata[which(quantdata$model=="ATMSG"), ]
+  
+#Isolating results from LMGM analyses only
+LMGM_data <- quantdata[which(quantdata$model=="LMGM"), ]
+
+# Participants who evaluated just one model
+unmatched_treatments <- get_unmatched_treatments(quantdata, 'model', 'id')
+
+#Clean up the original data from the treatments without pair
+paireddata <- quantdata[ ! quantdata$id %in% unmatched_treatments, ]    
+
+# Use only relevant columns
+relevant_columns <- c(1,3,4,5,7,18) #id, group, gamefam, sgsfam, model and sus_score
+paireddata <-  paireddata[, relevant_columns]
+
+#drop unused levels
+paireddata <- droplevels(paireddata)
+
+
+### Qualitative data processing
+
+# Load the functions
+source('qualitative_analysis.R', local=TRUE, verbose=FALSE)
+
+# Read the data
+qualdata <- read.csv("../clean-data/full_data_qualitative.csv", na.strings=c(""," ","NA"))
+
+# Clean the data
+qualdata <- cleanqualdata(qualdata)
+
+# Merge participant information to the qualitative dataset
+participant_info <- unique(quantdata[,c("id","group","gamefam","sgsfam")])
+qualdata <- merge(qualdata, participant_info, by="id", all = FALSE)
+qualdata <- qualdata[c("id", "group", "gamefam", "sgsfam", "coded_answer", "question_code")]
+rm(participant_info)
+
+```
+# Report - SG Models study
+
+## Description of the tests
+
+### Location1
+
+The tests were carried out in Location1 on 29/05/2014. Participants from Location1 were placed in Group A. Of the 18 participants, 13 handed in their questionnaires and analyses (12 males, 1 female). All participants played the game "MarketPlace" previously, during the 2 months of the course.
+
+
+### Location2
+
+In Location2, the study was conducted over the course of two weeks, as part of an undergraduate course in Industrial Management. There were in total 15 participants in the study (13 males, 2 females), divided in two groups (B and C). 
+
+### Online survey
+
+A third study was conducted online, using a LimeSurvey questionnaire and a Google Docs implementation of the analysis templates for both LM-GM and ATMSG. Participants were asked to evaluate the same game ("Senior PM Game") using both models. Group D used ATMSG first, while Group E used LM-GM. It was possible to stop the survey in the middle and return to it at a later time. 
+
+We recruited only participants who self-identified as very familiar with serious games or serious games experts. They were given a 20€ voucher as compensation for their time.
+
+
+### Age of participants
+
+
+```{r participants_age, echo=FALSE, results = "asis", cache=TRUE}
+kable(psych::describe(uniquedata$age), caption="Age of all participants")
+
+#kable(psych::describe(uniquedata$age[which(uniquedata$location=="Location1")]), caption="Age of participants in group A (Location1)") 
+
+#kable(psych::describe(uniquedata$age[which(uniquedata$location=="Location2")]), caption="Age of participants in groups B/C (Location2)") 
+
+#kable(psych::describe(uniquedata$age[which(uniquedata$location=="Online")]), caption="Age of participants in groups D/E (Online)")
+
+```
+
+
+### Familiarity with games and serious games
+
+
+```{r participants_familiarity, echo=FALSE, results = "asis", cache=TRUE}
+table_gamefam <-table(uniquedata$gamefam,uniquedata$group)
+table_gamefam <- addmargins(table_gamefam)
+kable(table_gamefam, caption="Familiarity of participants with games, per group")
+rm(table_gamefam)
+
+table_sgsfam <-table(uniquedata$sgsfam,uniquedata$group)
+table_sgsfam <- addmargins(table_sgsfam)
+kable(table_sgsfam, caption="Familiarity of participants with serious games, per group")
+rm(table_sgsfam)
+
+
+```
+
+### Participants per model
+
+The tables below show how many participants used which model to evaluate which game and the number of participants in each group. 
+
+Note that 3 participants did not deliver their analysis of Senior PM Game (two in Group B and one in Group C).
+
+
+```{r participants_per_model, echo=FALSE, results = "asis", cache=TRUE}
+ATMSG_cases <-table(ATMSG_data$game,ATMSG_data$group)
+ATMSG_cases <- addmargins(ATMSG_cases)
+kable(ATMSG_cases, caption="Participants that analyzed ATMSG, per group and per game")
+rm(ATMSG_cases)
+
+LMGM_cases <-table(LMGM_data$game,LMGM_data$group)
+LMGM_cases <- addmargins(LMGM_cases)
+kable(LMGM_cases, caption="Participants that analyzed LMGM, per group and per game")
+rm(LMGM_cases)
+
+```
+
+## Quantitative data
+
+This section evaluates the SUS score given to each model by the participants.
+
+For details on the SUS scale and how the SUS score is calculated, see [Annex I](#AnnexI). For a visualization of responses to each of the 10 questions of the SUS questionnaire, see [Annex II](#AnnexII).
+
+### ATMSG SUS scores analysis
+
+#### ATMSG SUS scores, all groups
+
+```{r atmsg_sus_scores, echo=FALSE, cache=TRUE}
+psych::describe(ATMSG_data$sus_score)
+
+```
+
+#### ATMSG SUS scores by location
+
+```{r atmsg_sus_scores_bylocation, echo=FALSE, cache=TRUE}
+psych::describeBy(ATMSG_data$sus_score, group=ATMSG_data$location)
+
+```
+
+#### SUS scores by familiarity with games
+
+```{r atmsg_sus_scores_bygamefam, echo=FALSE, cache=TRUE}
+psych::describeBy(ATMSG_data$sus_score, group=ATMSG_data$gamefam)
+
+```
+
+#### SUS scores by familiarity with serious games
+
+```{r atmsg_sus_scores_bysgsfam, echo=FALSE, cache=TRUE}
+psych::describeBy(ATMSG_data$sus_score, group=ATMSG_data$sgsfam)
+
+```
+
+
+### LM-GM SUS scores analysis
+
+The same analysis of SUS scores was performed with LM-GM. These scores do not refer to group A, which evaluated only using ATMSG.
+
+#### LM-GM SUS scores, all groups (except A)
+
+```{r lmgm_sus_scores, echo=FALSE, cache=TRUE}
+psych::describe(LMGM_data$sus_score)
+
+```
+#### LM-GM SUS scores by location
+
+```{r lmgm_sus_scores_bylocation, echo=FALSE, cache=TRUE}
+psych::describeBy(LMGM_data$sus_score, group=LMGM_data$location)
+
+```
+
+#### LM-GM SUS scores by familiarity with games
+
+```{r lmgm_sus_scores_bygamefam, echo=FALSE, cache=TRUE}
+psych::describeBy(LMGM_data$sus_score, group=LMGM_data$gamefam)
+
+```
+
+#### LM-GM SUS scores by familiarity with serious games
+
+```{r lmgm_sus_scores_bysgsfam, echo=FALSE, cache=TRUE}
+psych::describeBy(LMGM_data$sus_score, group=LMGM_data$sgsfam)
+
+```
+
+
+### ATMSG vs LM-GM SUS scores
+
+Are the SUS scores from ATMSG and LM-GM significantly different?
+
+Here we use scores from participants who evaluated both models. We also check if there is any difference between gamers and non-gamers (game familiarity) and SG experts and non-experts.
+
+Our null hyphotheses:
+
+- H01 = Main effect "game familiarity" is not significant in the resulting SUS scores.
+- H02 = Main effect "model used" is not significant in the resulting SUS scores.
+- H03 = Interaction effect between "game familiarity" and "model used" is not significant.
+
+H03 would even be of interest, but cannot be tested with this data, since this is an observational study with unbalanced data [^1].
+
+[^1]:   **Observation:** Here we do not try to infer anything about the interactions. This is an observational study, not an experimental one. Consequently, "there is no guarantee that treatments have been randomly assigned to subjects and rarely any balance causing some treatment combinations to be under-represented. All of this makes assessing interaction in observational studies dangerous. Main effects are hard enough to assess in such studies; interactions are truly pushing the envelope." See: http://www.unc.edu/courses/2010fall/ecol/563/001/docs/lectures/lecture1.htm#interactions
+    
+    What to do then? From the same author: "when I analyze observational data I start with main effects and maybe tentatively examine a few interactions that have a theoretical basis."
+    
+    Since our data does not support it, we are not going to try to identify any interaction between the factors ("game familiarity" and "model use"), but the main effects in each group. For this reason we use Type II ANOVA, which has more power than Type III SS analyses (see: https://stat.ethz.ch/pipermail/r-help/2010-March/230280.html and http://tolstoy.newcastle.edu.au/R/help/06/08/33607.html).
+
+
+First, we have a look at the box plots and the interaction plots of the data.
+
+```{r atmsg_lmgm_sus_plots, echo=FALSE, cache=TRUE}
+# Boxplots
+ggplot(paireddata, aes(x=model, y=sus_score, fill=model)) + geom_boxplot() + facet_wrap(~ gamefam) + ggtitle("LM-GM vs ATMSG, differences between game familiarity levels")
+
+ggplot(paireddata, aes(x=gamefam, y=sus_score, fill=model)) + geom_boxplot() + facet_wrap(~ model) + ggtitle("How gamers and non-gamers evaluated LM-GM and ATMSG")
+
+ggplot(data = paireddata,
+       aes(x = model, y = sus_score, colour = gamefam, group=gamefam)) +
+       stat_summary(fun.y=mean, geom="point")+
+       stat_summary(fun.y=mean, geom="line") +
+       ggtitle("How each method was evaluated by each group of participants")
+
+ggplot(data = paireddata,
+       aes(x = gamefam, y = sus_score, colour = model, group=model)) +
+       stat_summary(fun.y=mean, geom="point")+
+       stat_summary(fun.y=mean, geom="line") +
+       ggtitle("How each group of participants evaluated each model")
+
+```
+
+The interaction plot above shows the different scores that participants of different familiarity with games gave to each of the models.
+
+We then performed an ANOVA test to analyze any differences between the conditions, including dividing the participants by familiarity with games.
+
+Our variables:
+
+* Between-subjects factor: familiarity with games, with three levels (Medium, Medium-high and High)
+* Within-subjects factor: model, with two levels (ATMSG and LM-GM)
+* Dependent variable: SUS Score
+
+
+```{r atmsg_lmgm_sus, echo=FALSE, cache=TRUE}
+
+#split groups
+summaryBy(sus_score~model*gamefam,data=paireddata,FUN=c(mean, length))
+
+summaryBy(sus_score~model,data=paireddata,FUN=c(mean, length))
+
+summaryBy(sus_score~gamefam,data=paireddata,FUN=c(mean, length))
+
+##Test the homogeneity of variance
+
+#Levene's test for between-subjects variable (game familiarity)
+car::leveneTest(sus_score ~ gamefam, data=paireddata) 
+
+#Which homogeneity test for the within-subjects variable (method)?
+
+```
+
+**Type II ANOVA**
+
+```{r atmsg_lmgm_sus_anova_typeII, echo=FALSE, cache=TRUE}
+
+#Using Anova() function from the car package, for consistency with the previous ANOVAs.
+
+# Reshaping the data
+paireddata_wide <- reshape(paireddata, idvar="id", timevar="model", v.names="sus_score", direction="wide")
+
+atmsg_paired_model_lm <- lm(formula = cbind(sus_score.LMGM, sus_score.ATMSG) ~ gamefam, data=paireddata_wide)
+
+atmsg_paired_model <- Anova(atmsg_paired_model_lm,
+  idata = data.frame( model = factor(1:2) ),
+  idesign = ~model,
+  type = "II" )
+
+nice.anova(atmsg_paired_model, es = "ges", observed = "gamefam",
+    correction = c("GG", "HF", "none"), MSE = TRUE,
+    sig.symbols = c("", " *", " **", " ***"))
+
+#kable(etasq(atmsg_lmgm_sus_mod, anova = TRUE, partial = TRUE, test="Wilks"))
+rm(atmsg_paired_model)
+
+```
+
+Interpretations:
+
+* The plots suggest the possibility that there could be an effect in the interaction between the model used and the familiarity of the participant with games. In other words, ATMSG is much less usable for non-gamers and more usable for gamers, while LM-GM has an evaluation that depends less on users familiarity with games. However, as stated before, as this is an observational study, this interaction would have to be tested again with new data.
+* There is no effect of the model used in the within-subject measurement. This means that participnts did not evaluate the two models in a significantly different way (the ones that thought the first model was hard thought the second one was hard as well).  
+* There **is** an effect on the familiarity with games, meaning that the results, in general, were different for those who self identified as gamer and as non-gamer.  
+
+
+
+## Qualitative analysis
+
+We have collected the participant's comments on the questionnaires and coded the answers, from both groups. The tables below shows the number of participants in each group, split by familiarity with games.
+
+```{r qualitative_data_stats, echo=FALSE, results="asis", cache=TRUE}
+
+unique_participants <- qualdata[!duplicated(qualdata$id), c("id", "group", "gamefam", "sgsfam")]
+unique_participants <- addmargins(table(unique_participants$group, unique_participants$gamefam))
+
+kable(unique_participants, caption="Number of participants in Qualitative data collection, by game familiarity")
+rm(unique_participants)
+
+```
+
+
+The table below shows the frequency in which the comments were made (for all three studies), split by familiarity with games.
+
+
+```{r qualitative_data_full, echo=FALSE, results = "asis", cache=TRUE}
+
+#ftable <- buildfreqtable(qualdata)
+
+ftable_gamefam <- structable(gamefam ~ coded_answer, droplevels(qualdata))
+ftable_gamefam <- as.data.frame(addmargins(ftable_gamefam, margin=2))
+ftable_gamefam <- ftable_gamefam[with(ftable_gamefam, order(-Sum)), ]
+
+kable(ftable_gamefam, caption="Frequency of comments, all participants, by game familiarity")
+rm(ftable_gamefam)
+
+```
+
+To generate the table below, we used only participants who evaluated both models. This table also shows the reversed frequency in which the comments were made, split by familiarity with games.
+
+
+```{r qualitative_data_paired_games, echo=FALSE, results = "asis", cache=TRUE}
+
+# Clean up the data from the treatments without pair 
+# since here we want only participants who compared the models
+qualdata_paired <- qualdata[ ! qualdata$id %in% unmatched_treatments, ]    
+
+#ftable_paired <- buildfreqtable(qualdata_paired)
+
+ftable_gamefam_matched <- structable(gamefam ~ coded_answer, droplevels(qualdata_paired))
+ftable_gamefam_matched <- as.data.frame(addmargins(ftable_gamefam_matched, margin=2))
+ftable_gamefam_matched <- ftable_gamefam_matched[with(ftable_gamefam_matched, order(-Sum)), ]
+
+kable(ftable_gamefam_matched, caption="Frequency of comments, participants who evaluated both methods, by game familiarity")
+rm(ftable_gamefam_matched)
+
+
+```
+
+Reversed frequency in which the comments were made, split by familiarity with serious games.
+
+
+```{r qualitative_data_paired_sgs, echo=FALSE, results = "asis", cache=TRUE}
+
+ftable_sgsfam_matched <- structable(sgsfam ~ coded_answer, droplevels(qualdata_paired))
+ftable_sgsfam_matched <- as.data.frame(addmargins(ftable_sgsfam_matched, margin=2))
+ftable_sgsfam_matched <- ftable_sgsfam_matched[with(ftable_sgsfam_matched, order(-Sum)), ]
+
+kable(ftable_sgsfam_matched, caption="Frequency of comments, participants who evaluated both methods, by serious game familiarity")
+rm(ftable_sgsfam_matched)
+
+
+```
+
+<a id="AnnexI"></a>
+
+# Annex I: Calculation of SUS scores
+
+
+The system usability scale (SUS) is a simple, ten-item attitude Likert scale giving a global view of subjective assessments of usability. It was developed by John Brooke at Digital Equipment Corporation in the UK in 1986 as a tool to be used in usability engineering of electronic office systems (Brooke, 1996).
+
+The SUS yields a single score on a scale of 0-100, obtained by converting all the individual measurements to a scale from 0 to 4 (subtracting the user responses from 5 in the even-numbered items, and subtracting 1 from the user's response for the odd-numbered items), adding them up and multiplying the total by 2.5.
+
+In this analysis, the following questions were used. Green items are positive affirmations; red items are negative (same as in the original SUS).
+
+1.  I think that I would like to use this model if/when I study games for learning
+2.	I found the model unnecessarily complex
+3.	I thought the model was easy to use
+4.	I think that I would need the support of an expert to be able to use this model
+5.	I found the various steps in this model were well integrated
+6.	I thought there was too much inconsistency in this model
+7.	I would imagine that most people would learn to use this model very quickly
+8.	I found the model very cumbersome to use
+9.	I felt very confident using the model
+10.	I needed to learn a lot of things before I could get going with this model
+
+_Obs: Questions 4 and 10 indicate learnability of the system/product/model._
+
+
+<a id="AnnexII"></a>
+
+# Annex II: SUS Questionnaire, by question
+
+Responses to each question of the SUS questionnaire.
+
+```{r likert_plots, echo=FALSE, results = "asis", fig.height=7, cache=TRUE}
+
+# get relevant data for Likert plots, with nice questions formatting
+likert_data <- preparelikertdata(quantdata) 
+suscolumns <- c(8:17) #The columns that contain the SUS questions
+
+suslikert <- likert(likert_data[suscolumns], grouping = likert_data$model, nlevels = 5) 
+plot(suslikert)+ ggtitle("SUS questions, by model")
+rm(suslikert)
+
+#suslikert_bygame <- likert(likert_data[suscolumns], grouping = likert_data$game, nlevels = 5) 
+#plot(suslikert_bygame)+ ggtitle("SUS questions, compared by game")
+#rm(suslikert_bygame)
+
+#suslikert_bylocation <- likert(likert_data[suscolumns], grouping = likert_data$location, nlevels = 5) 
+#plot(suslikert_bylocation)+ ggtitle("SUS questions, compared by location")
+#rm(suslikert_bylocation)
+
+#suslikert_atmsg <- likert(likert_data[which(likert_data$model=="ATMSG"), suscolumns], grouping = NULL, nlevels = 5) 
+#plot(suslikert_atmsg)+ ggtitle("SUS questions for the ATMSG model")
+#rm(suslikert_atmsg)
+
+#suslikert_atmsg_group <- likert(likert_data[which(likert_data$model=="ATMSG"), suscolumns], grouping = likert_data$group[which(likert_data$model=="ATMSG")], nlevels = 5) 
+#plot(suslikert_atmsg_group)+ ggtitle("SUS questions for the ATMSG model, by Group")
+#rm(suslikert_atmsg_group)
+
+suslikert_atmsg_gamefam <- likert(likert_data[which(likert_data$model=="ATMSG"), suscolumns], grouping = likert_data$gamefam[which(likert_data$model=="ATMSG")], nlevels = 5) 
+plot(suslikert_atmsg_gamefam)+ ggtitle("SUS questions for the ATMSG model, by familiarity with games")
+rm(suslikert_atmsg_gamefam)
+
+#suslikert_lmgm <- likert(likert_data[which(likert_data$model=="LMGM"), suscolumns], grouping = NULL, nlevels=5)
+#plot(suslikert_lmgm)+ ggtitle("SUS questions for the LM-GM model")
+#rm(suslikert_lmgm)
+
+suslikert_lmgm_gamefam <- likert(likert_data[which(likert_data$model=="LMGM"), suscolumns], grouping = likert_data$gamefam[which(likert_data$model=="LMGM")], nlevels=5)
+plot(suslikert_lmgm_gamefam)+ ggtitle("SUS questions for the LM-GM model, by familiarity with games")
+rm(suslikert_lmgm_gamefam)
+```

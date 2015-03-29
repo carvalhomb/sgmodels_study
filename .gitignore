@@ -14,6 +14,7 @@ vignettes/*.pdf
 *~
 
 #Knitr temporary files
-cache/*
-Report.md
+R/Report_cache/*
+R/Report_files/*
+R/Report.md
 
