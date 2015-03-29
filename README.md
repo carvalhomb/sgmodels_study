@@ -50,8 +50,3 @@ The data and text in this repository are released as [public domain](http://crea
 
 The R scripts are released under the [MIT License](http://opensource.org/licenses/MIT).
 
-## Contact
-
-Maira B. Carvalho  
-PhD Candidate TU/e | UNIGE  
-<http://mairacarvalho.com/contact>
