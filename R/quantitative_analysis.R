@@ -2,8 +2,8 @@
 cleanquantdata <- function(mydata) {
 
   #Apply levels
-  mydata[c('gamefam')] <-lapply(mydata[c('gamefam')], factor, levels = c('1','2','3','4','5'), labels = c('None','Low','Medium','Medium-high', 'High'))
-  mydata[c('sgsfam')] <- lapply(mydata[c('sgsfam')], factor, levels = c('1','2','3','4','5'), labels = c('None','Low','Medium','Medium-high', 'High'))
+  mydata[c('gamefam')] <-lapply(mydata[c('gamefam')], factor, levels = c('1','2','3','4','5'), labels = c('Non-Gamer','Non-Gamer','Non-Gamer','Gamer', 'Gamer'))
+  mydata[c('sgsfam')] <- lapply(mydata[c('sgsfam')], factor, levels = c('1','2','3','4','5'), labels = c('Non-expert','Non-expert','Non-expert','SGExpert', 'SGExpert'))
 
 
   mydata <- droplevels(mydata) #Removing unused levels

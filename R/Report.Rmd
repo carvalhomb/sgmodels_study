@@ -92,6 +92,14 @@ qualdata <- merge(qualdata, participant_info, by="id", all = FALSE)
 qualdata <- qualdata[c("id", "group", "gamefam", "sgsfam", "coded_answer", "question_code")]
 rm(participant_info)
 
+# Clean up the data from the treatments without pair 
+# since here we want only participants who compared the models
+qualdata_paired <- qualdata[ ! qualdata$id %in% unmatched_treatments, ]   
+
+# Only one coded_answer per participant, even if mentioned in multiple questions
+nondupqualdata <- (qualdata[which( !duplicated(qualdata[ ,c("id", "coded_answer")]) ),])
+nondupqualdata_paired <- (qualdata[which( !duplicated(qualdata_paired[ ,c("id", "coded_answer")]) ),])
+
 ```
 # Report - SG Models study
 
@@ -201,6 +209,57 @@ psych::describeBy(ATMSG_data$sus_score, group=ATMSG_data$sgsfam)
 
 ```
 
+Considering only the ATMSG sus scores, we wanted to know if there was any differences between the groups depending on several factors, such the game played, the familiarity of the student with games or serious games. 
+
+For that purpose, we performed an ANOVA to compare the SUS scores for ATMSG. We compared the three conditions (familiarity with games, with sgs and the game played).
+
+- H0 = The SUS scores are the same, independently of the game played and the participants familiarity with games or serious games.
+- H1 = The SUS scores are NOT the same, considering the game played and the participants familiarity with games or serious games.
+
+
+```{r anova_atmsg, echo=FALSE, cache=TRUE}
+
+
+# Build the model
+lmmodel_sus_atmsg <- lm(sus_score ~ gamefam + sgsfam + game, data=ATMSG_data)
+
+# There are no SDs for each group since ANOVA assumes that the variance (and consequently the SD) is the same for all the groups. Brown-Forsythe and Levene tests are made precisely to see if the variances are equal or not!
+#Test the homogeneity of variance
+#lawstat::levene.test(ATMSG_data$sus_score, ATMSG_data$gamefam)
+car::leveneTest(sus_score ~ gamefam, data=ATMSG_data)
+
+anova_table <- Anova(lmmodel_sus_atmsg,type=c("II"), contrasts=list(topic=contr.sum, sys=contr.sum), singular.ok=TRUE, multivariate=FALSE)
+#kable(anova_table)
+kable(nice.anova(anova_table, es = "ges", observed = c("gamefam","sgsfam"),
+    correction = c("GG", "HF", "none"), MSE = TRUE,
+    sig.symbols = c("", " *", " **", " ***")))
+rm(anova_table)
+
+model.tables(aov(lmmodel_sus_atmsg), type="means", se=FALSE) #se=TRUE gives error that design is unbalanced and asks me to use se.contrast to get Standard Error information instead
+#se.contrast(aov(lmmodel_sus_atmsg), list(gamefam=="3-FewTimes", gamefam=="5-Gamer"), data = ATMSG_data)
+#se.contrast(aov(lmmodel_sus_atmsg), list(gamefam=="4-NowAndThen", gamefam=="5-Gamer"), data = ATMSG_data)
+
+
+
+
+```
+
+**A significant difference has been found in the game familiarity condition.** We performed a pairwise post-hoc Tukey test to identify which groups are different.
+
+```{r post-hoc_anova_atmsg, echo=FALSE, cache=TRUE}
+describeBy(ATMSG_data$sus_score, ATMSG_data$gamefam)
+
+TukeyHSD(aov(lmmodel_sus_atmsg), which='gamefam')
+
+boxplot(sus_score~gamefam, data=ATMSG_data)
+
+rm(lmmodel_sus_atmsg) #The linear model is not used anymore in this script
+
+```
+
+**Conclusion: We reject the null hypothesis** that there is no difference between the SUS scores given by students who have self-identified as medium familiarity with games ("I've played digital games a few times") and the students who stated that they have a high familiarity with digital games ("I play digital games frequently/I'm a gamer.").
+
+
 
 ### LM-GM SUS scores analysis
 
@@ -232,6 +291,35 @@ psych::describeBy(LMGM_data$sus_score, group=LMGM_data$gamefam)
 psych::describeBy(LMGM_data$sus_score, group=LMGM_data$sgsfam)
 
 ```
+We also performed the ANOVA analysis in the results of the SUS in LM-GM to identify any differences due to the conditions (game familiarity, game played, serious games familiarity). 
+
+- H0 = The SUS scores are the same, independently of the game played and the participants familiarity with games or serious games.
+- H1 = The SUS scores are NOT the same, considering the game played and the participants familiarity with games or serious games.
+
+
+```{r anova_lmgm, echo=FALSE, cache=TRUE}
+
+#Test the homogeneity of variance
+#lawstat::levene.test(LMGM_data$sus_score, LMGM_data$gamefam)
+car::leveneTest(sus_score ~ gamefam, data=LMGM_data)
+
+lmmodel_sus_lmgm <- lm(sus_score ~ gamefam + sgsfam + game, data=LMGM_data)
+anova_table2 <- Anova(lmmodel_sus_lmgm,type=c("II"), contrasts=list(topic=contr.sum, sys=contr.sum), singular.ok=TRUE, multivariate=FALSE)
+#kable(anova_table2)
+#kable(
+nice.anova(anova_table2, es = "ges", observed = c("gamefam","sgsfam"),
+    correction = c("GG", "HF", "none"), MSE = TRUE,
+    sig.symbols = c("", " *", " **", " ***"))
+#)
+
+model.tables(aov(lmmodel_sus_lmgm), type="means", se=F)
+rm(lmmodel_sus_lmgm) #The linear model is not used anymore in this script
+
+boxplot(sus_score~gamefam, data=LMGM_data)
+
+```
+
+**Conclusion: we do not reject the H0 hypothesis.** For LM-GM, there is no difference in perception between the participants subgroups.
 
 
 ### ATMSG vs LM-GM SUS scores
@@ -279,11 +367,11 @@ ggplot(data = paireddata,
 
 The interaction plot above shows the different scores that participants of different familiarity with games gave to each of the models.
 
-We then performed an ANOVA test to analyze any differences between the conditions, including dividing the participants by familiarity with games.
+We then performed an ANOVA test to analyze any differences between the conditions, including dividing the participants by familiarity with games (Non-Gamer (scores 1-3), Gamer(scores 4-5)).
 
 Our variables:
 
-* Between-subjects factor: familiarity with games, with three levels (Medium, Medium-high and High)
+* Between-subjects factor: familiarity with games, with two levels (Non-Gamer (scores 1-3), Gamer(scores 4-5))
 * Within-subjects factor: model, with two levels (ATMSG and LM-GM)
 * Dependent variable: SUS Score
 
@@ -345,7 +433,12 @@ We have collected the participant's comments on the questionnaires and coded the
 
 ```{r qualitative_data_stats, echo=FALSE, results="asis", cache=TRUE}
 
+
+
 unique_participants <- qualdata[!duplicated(qualdata$id), c("id", "group", "gamefam", "sgsfam")]
+
+
+
 unique_participants <- addmargins(table(unique_participants$group, unique_participants$gamefam))
 
 kable(unique_participants, caption="Number of participants in Qualitative data collection, by game familiarity")
@@ -361,7 +454,7 @@ The table below shows the frequency in which the comments were made (for all thr
 
 #ftable <- buildfreqtable(qualdata)
 
-ftable_gamefam <- structable(gamefam ~ coded_answer, droplevels(qualdata))
+ftable_gamefam <- structable(gamefam ~ coded_answer, droplevels(nondupqualdata))
 ftable_gamefam <- as.data.frame(addmargins(ftable_gamefam, margin=2))
 ftable_gamefam <- ftable_gamefam[with(ftable_gamefam, order(-Sum)), ]
 
@@ -375,13 +468,11 @@ To generate the table below, we used only participants who evaluated both models
 
 ```{r qualitative_data_paired_games, echo=FALSE, results = "asis", cache=TRUE}
 
-# Clean up the data from the treatments without pair 
-# since here we want only participants who compared the models
-qualdata_paired <- qualdata[ ! qualdata$id %in% unmatched_treatments, ]    
+
 
 #ftable_paired <- buildfreqtable(qualdata_paired)
 
-ftable_gamefam_matched <- structable(gamefam ~ coded_answer, droplevels(qualdata_paired))
+ftable_gamefam_matched <- structable(gamefam ~ coded_answer, droplevels(nondupqualdata_paired))
 ftable_gamefam_matched <- as.data.frame(addmargins(ftable_gamefam_matched, margin=2))
 ftable_gamefam_matched <- ftable_gamefam_matched[with(ftable_gamefam_matched, order(-Sum)), ]
 
@@ -391,20 +482,6 @@ rm(ftable_gamefam_matched)
 
 ```
 
-Reversed frequency in which the comments were made, split by familiarity with serious games.
-
-
-```{r qualitative_data_paired_sgs, echo=FALSE, results = "asis", cache=TRUE}
-
-ftable_sgsfam_matched <- structable(sgsfam ~ coded_answer, droplevels(qualdata_paired))
-ftable_sgsfam_matched <- as.data.frame(addmargins(ftable_sgsfam_matched, margin=2))
-ftable_sgsfam_matched <- ftable_sgsfam_matched[with(ftable_sgsfam_matched, order(-Sum)), ]
-
-kable(ftable_sgsfam_matched, caption="Frequency of comments, participants who evaluated both methods, by serious game familiarity")
-rm(ftable_sgsfam_matched)
-
-
-```
 
 <a id="AnnexI"></a>
 
