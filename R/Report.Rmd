@@ -98,7 +98,7 @@ qualdata_paired <- qualdata[ ! qualdata$id %in% unmatched_treatments, ]
 
 # Only one coded_answer per participant, even if mentioned in multiple questions
 nondupqualdata <- (qualdata[which( !duplicated(qualdata[ ,c("id", "coded_answer")]) ),])
-nondupqualdata_paired <- (qualdata[which( !duplicated(qualdata_paired[ ,c("id", "coded_answer")]) ),])
+nondupqualdata_paired <- (qualdata_paired[which( !duplicated(qualdata_paired[ ,c("id", "coded_answer")]) ),])
 
 ```
 # Report - SG Models study
