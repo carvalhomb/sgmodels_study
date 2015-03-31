@@ -372,7 +372,7 @@
 	<b>Tip:</b> the frame below can be resized. Drag the bottom right edge to make it fit better in your screen.</p>
 <br />
 <div class="resizable">
-	<iframe id="analysis" src="../templates/atmsg.php?token={TOKEN}"></iframe></div>
+	<iframe id="analysis" src="http://YOUR_WEB_SERVER/atmsg.php?token={TOKEN}"></iframe></div>
 ]]></question>
     <preg/>
     <help/>
@@ -522,7 +522,7 @@
 <p>
 	 </p>
 <p>
-	Please read this PDF. You can also <a href="../templates/atmsg-handout.pdf" target="_blank">download it</a> and then print it out, open it in a tablet or open it using your computer's PDF viewer.</p>
+	Please read this PDF. You can also <a href="http://YOUR_WEB_SERVER/atmsg-handout.pdf" target="_blank">download it</a> and then print it out, open it in a tablet or open it using your computer's PDF viewer.</p>
 <p>
 	<br />
 	 </p>
@@ -531,7 +531,7 @@
 <p>
 	 </p>
 <div class="resizable">
-	<object data="../templates/atmsg-handout.pdf" type="application/pdf">It appears you don't have a PDF plugin for this browser. Please <a href="../templates/atmsg-handout.pdf" target="_blank">click here to download the PDF file.</a></object></div>
+	<object data="http://YOUR_WEB_SERVER/atmsg-handout.pdf" type="application/pdf">It appears you don't have a PDF plugin for this browser. Please <a href="http://YOUR_WEB_SERVER/atmsg-handout.pdf" target="_blank">click here to download the PDF file.</a></object></div>
 ]]></question>
     <preg/>
     <help/>
@@ -550,7 +550,7 @@
     <gid><![CDATA[167]]></gid>
     <type><![CDATA[L]]></type>
     <title><![CDATA[cont01]]></title>
-    <question><![CDATA[Have you finished reading the PDF and are you ready to continue? Remember, you can <a href="../templates/atmsg-handout.pdf" target="_blank">download the PDF</a> to consult it later, when performing the analysis.]]></question>
+    <question><![CDATA[Have you finished reading the PDF and are you ready to continue? Remember, you can <a href="http://YOUR_WEB_SERVER/atmsg-handout.pdf" target="_blank">download the PDF</a> to consult it later, when performing the analysis.]]></question>
     <preg/>
     <help><![CDATA[Remember, you can always save the questionnaire by clicking in "Resume later" (bottom) and return to it at a later time.]]></help>
     <other><![CDATA[N]]></other>
@@ -591,7 +591,7 @@
 <p>
 	 </p>
 <p>
-	Please read this PDF. You can also <a href="../templates/lmgm-handout.pdf" target="_blank">download it</a> and then print it out, open it in a tablet or open it using your computer's PDF viewer.</p>
+	Please read this PDF. You can also <a href="http://YOUR_WEB_SERVER/lmgm-handout.pdf" target="_blank">download it</a> and then print it out, open it in a tablet or open it using your computer's PDF viewer.</p>
 <p>
 	<br />
 	 </p>
@@ -600,7 +600,7 @@
 <p>
 	 </p>
 <div class="resizable">
-	<object data="../templates/lmgm-handout.pdf" type="application/pdf">It appears you don't have a PDF plugin for this browser. Please <a href="../templates/lmgm-handout.pdf" target="_blank">click here to download the PDF file.</a></object></div>
+	<object data="http://YOUR_WEB_SERVER/lmgm-handout.pdf" type="application/pdf">It appears you don't have a PDF plugin for this browser. Please <a href="http://YOUR_WEB_SERVER/lmgm-handout.pdf" target="_blank">click here to download the PDF file.</a></object></div>
 ]]></question>
     <preg/>
     <help/>
@@ -619,7 +619,7 @@
     <gid><![CDATA[171]]></gid>
     <type><![CDATA[L]]></type>
     <title><![CDATA[cont03]]></title>
-    <question><![CDATA[Have you finished reading the PDF and are you ready to continue? Remember, you can <a href="../templates/lmgm-handout.pdf" target="_blank">download the PDF</a> to consult it later, when performing the analysis.]]></question>
+    <question><![CDATA[Have you finished reading the PDF and are you ready to continue? Remember, you can <a href="http://YOUR_WEB_SERVER/lmgm-handout.pdf" target="_blank">download the PDF</a> to consult it later, when performing the analysis.]]></question>
     <preg/>
     <help><![CDATA[Remember, you can always save the questionnaire by clicking on "Resume later" (bottom) and return to it at a later time.]]></help>
     <other><![CDATA[N]]></other>
@@ -646,7 +646,7 @@
 	<b>Tip:</b> the frame below can be resized. Drag the bottom right edge to make it fit better in your screen.</p>
 <br />
 <div class="resizable">
-	<iframe src="../templates/lmgm.php?token={TOKEN}"></iframe></div>
+	<iframe src="http://YOUR_WEB_SERVER/lmgm.php?token={TOKEN}"></iframe></div>
 ]]></question>
     <preg/>
     <help/>
@@ -742,7 +742,7 @@
 <p>
 	 </p>
 <p>
-	Please read this PDF. You can also <a href="../templates/atmsg-handout.pdf" target="_blank">download it</a> and then print it out, open it in a tablet or open it using your computer's PDF viewer.</p>
+	Please read this PDF. You can also <a href="http://YOUR_WEB_SERVER/atmsg-handout.pdf" target="_blank">download it</a> and then print it out, open it in a tablet or open it using your computer's PDF viewer.</p>
 <p>
 	<br />
 	 </p>
@@ -751,7 +751,7 @@
 <p>
 	 </p>
 <div class="resizable">
-	<object data="../templates/atmsg-handout.pdf" type="application/pdf">It appears you don't have a PDF plugin for this browser. Please <a href="../templates/atmsg-handout.pdf" target="_blank">click here to download the PDF file.</a></object></div>
+	<object data="http://YOUR_WEB_SERVER/atmsg-handout.pdf" type="application/pdf">It appears you don't have a PDF plugin for this browser. Please <a href="http://YOUR_WEB_SERVER/atmsg-handout.pdf" target="_blank">click here to download the PDF file.</a></object></div>
 ]]></question>
     <preg/>
     <help/>
@@ -770,7 +770,7 @@
     <gid><![CDATA[174]]></gid>
     <type><![CDATA[L]]></type>
     <title><![CDATA[cont05]]></title>
-    <question><![CDATA[Have you finished reading the PDF and are you ready to continue? Remember, you can <a href="../templates/atmsg-handout.pdf" target="_blank">download the PDF</a> to consult it later, when performing the analysis.]]></question>
+    <question><![CDATA[Have you finished reading the PDF and are you ready to continue? Remember, you can <a href="http://YOUR_WEB_SERVER/atmsg-handout.pdf" target="_blank">download the PDF</a> to consult it later, when performing the analysis.]]></question>
     <preg/>
     <help><![CDATA[Remember, you can always save the questionnaire by clicking on "Resume later" (bottom) and return to it at a later time.]]></help>
     <other><![CDATA[N]]></other>
@@ -797,7 +797,7 @@
 	<b>Tip:</b> the frame below can be resized. Drag the bottom right edge to make it fit better in your screen.</p>
 <br />
 <div class="resizable">
-	<iframe src="../templates/atmsg.php?token={TOKEN}"></iframe></div>
+	<iframe src="http://YOUR_WEB_SERVER/atmsg.php?token={TOKEN}"></iframe></div>
 ]]></question>
     <preg/>
     <help/>

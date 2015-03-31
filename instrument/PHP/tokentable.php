@@ -91,7 +91,7 @@ if (in_array($participant_token, $accepted_tokens)) {
                 $error_msg = "[$now] Uh-oh, it seems you ran out of Google Docs entries! \n--------------------------- TOKEN that triggered the error: $participant_token \n";			
                 error_log($error_msg, 3, "error.log");
                 if ($send_emails) {
-                    error_log($error_msg, 1, "limesurvey@mairacarvalho.com", "Subject: Error in ATMSG survey!\nFrom: limesurvey@mairacarvalho.com\n");	
+                    error_log($error_msg, 1, $admin_email, "Subject: Error in ATMSG survey!\nFrom: $admin_email\n");	
                 }
                 exit();
             } else {
@@ -142,7 +142,7 @@ if (in_array($participant_token, $accepted_tokens)) {
 			// the message
 			$msg = "Dear admin of the ATMSG survey,\n\nThis is just to let you know that you have now \n only $tokens_left tokens left in the GDocs table.";
 			// send email
-			mail("hello@mairacarvalho.com","Notice: $tokens_left tokens left in the GDocs table",$msg);
+			mail($admin_email,"Notice: $tokens_left tokens left in the GDocs table",$msg);
 			
 		}
 		
