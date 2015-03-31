@@ -60,33 +60,57 @@ if (in_array($participant_token, $accepted_tokens)) {
 		$db_atmsg = new db($config_atmsg);
 		$db_atmsg->openConnection();
 
-		$query_string = 'SELECT * FROM {docs} WHERE ( (token is NULL) OR (token LIKE %s) ) ORDER BY id ASC LIMIT 1';
-	
-		$result = false;
-		$result = $db_atmsg->query($query_string, $participant_token);
+		//$query_string = 'SELECT * FROM {docs} WHERE ( (token is NULL) OR (token LIKE %s) ) ORDER BY id ASC LIMIT 1';
+        $query_string = 'SELECT * FROM {docs} WHERE ( token LIKE %s ) ORDER BY id ASC LIMIT 1'; //Is the participant already in the token table?
+        $result = false;
+        $result = $db_atmsg->query($query_string, $participant_token);
 		
-		$hasRows = $db_atmsg->hasRows($result);
+        $docs = false;		
+        
+        $hasRows = $db_atmsg->hasRows($result);      
+        
+        if ($hasRows) { //Participant is already in token list            
+            //Populate the $docs array with the existing google docs for that token
+            foreach ($result as $row) {
+                $docs['docs_id'] = $row['id'];
+                $docs['atmsgdiagram_dochash'] = $row['atmsg_diagram'];
+                $docs['atmsgtable_dochash'] = $row['atmsg_table'];
+                $docs['lmgmdiagram_dochash'] = $row['lmgm_diagram'];
+                $docs['lmgmtable_dochash'] = $row['lmgm_table'];
+            }
+        } else { //Participant is NOT in the list, so get an empty row of docs
+            // Get the first empty entry in the token table
+            $query_string_empty = 'SELECT * FROM {docs} WHERE (token is NULL) ORDER BY id ASC LIMIT 1'; 
+            $result_empty = false;
+            $result_empty = $db_atmsg->query($query_string_empty);
+            $hasRows_empty = $db_atmsg->hasRows($result_empty);        
 		
-		if (!$hasRows) {
-			echo "Sorry, either you have already completed this survey, or there has been an error with the setup of the survey. The administrator has been warned of this.";
-			$now = date(DATE_ATOM);
-			$error_msg = "[$now] Uh-oh, it seems you ran out of Google Docs entries! Or maybe someone is trying to reuse a token. \n--------------------------- TOKEN: $participant_token \n";			
-			error_log($error_msg, 3, "error.log");
-			if ($send_emails) {
-				error_log($error_msg, 1, "root@localhost", "Subject: Error in ATMSG survey!\nFrom: root@localhost\n");	
-			}
-			exit();
-		}
+            if (!$hasRows_empty) { //No more empty rows in the table! Give error message and warn the admin
+                echo "Sorry, there has been an error with the setup of the survey. The administrator has been warned of this.";
+                $now = date(DATE_ATOM);
+                $error_msg = "[$now] Uh-oh, it seems you ran out of Google Docs entries! \n--------------------------- TOKEN that triggered the error: $participant_token \n";			
+                error_log($error_msg, 3, "error.log");
+                if ($send_emails) {
+                    error_log($error_msg, 1, "limesurvey@mairacarvalho.com", "Subject: Error in ATMSG survey!\nFrom: limesurvey@mairacarvalho.com\n");	
+                }
+                exit();
+            } else {
+                //Populate the $docs array with the docs from an empty row
+                foreach ($result_empty as $row) {
+                    $docs['docs_id'] = $row['id'];
+                    $docs['atmsgdiagram_dochash'] = $row['atmsg_diagram'];
+                    $docs['atmsgtable_dochash'] = $row['atmsg_table'];
+                    $docs['lmgmdiagram_dochash'] = $row['lmgm_diagram'];
+                    $docs['lmgmtable_dochash'] = $row['lmgm_table'];
+                }
+                
+            }
+
+        }
 
 
-		$docs = false;				
-		foreach ($result as $row) {
-			$docs['docs_id'] = $row['id'];
-			$docs['atmsgdiagram_dochash'] = $row['atmsg_diagram'];
-			$docs['atmsgtable_dochash'] = $row['atmsg_table'];
-			$docs['lmgmdiagram_dochash'] = $row['lmgm_diagram'];
-			$docs['lmgmtable_dochash'] = $row['lmgm_table'];
-		}
+					
+
 		
 		
 	
@@ -118,7 +142,7 @@ if (in_array($participant_token, $accepted_tokens)) {
 			// the message
 			$msg = "Dear admin of the ATMSG survey,\n\nThis is just to let you know that you have now \n only $tokens_left tokens left in the GDocs table.";
 			// send email
-			mail("root@localhost","Notice: $tokens_left tokens left in the GDocs table",$msg);
+			mail("hello@mairacarvalho.com","Notice: $tokens_left tokens left in the GDocs table",$msg);
 			
 		}
 		
