@@ -228,9 +228,13 @@ lmmodel_sus_atmsg <- lm(sus_score ~ gamefam + sgsfam + game, data=ATMSG_data)
 #lawstat::levene.test(ATMSG_data$sus_score, ATMSG_data$gamefam)
 car::leveneTest(sus_score ~ gamefam, data=ATMSG_data)
 
-anova_table <- Anova(lmmodel_sus_atmsg,type=c("II"), contrasts=list(topic=contr.sum, sys=contr.sum), singular.ok=TRUE, multivariate=FALSE)
+anova_table <- car::Anova(lmmodel_sus_atmsg,type=c("II"), contrasts=list(topic=contr.sum, sys=contr.sum), singular.ok=TRUE, multivariate=FALSE)
+
+#formula = sus_score ~ gamefam + sgsfam + game
+#aov_car(formula, data=ATMSG_data, observed = c("gamefam","sgsfam"), anova_table = list(correction = c("GG", "HF", "none"), es = "pes", MSE = TRUE, sig.symbols = c("", " *", " **", " ***")))
+
 #kable(anova_table)
-kable(nice.anova(anova_table, es = "ges", observed = c("gamefam","sgsfam"),
+kable(afex::nice(anova_table, es = "ges", observed = c("gamefam","sgsfam"),
     correction = c("GG", "HF", "none"), MSE = TRUE,
     sig.symbols = c("", " *", " **", " ***")))
 rm(anova_table)
@@ -307,7 +311,7 @@ lmmodel_sus_lmgm <- lm(sus_score ~ gamefam + sgsfam + game, data=LMGM_data)
 anova_table2 <- Anova(lmmodel_sus_lmgm,type=c("II"), contrasts=list(topic=contr.sum, sys=contr.sum), singular.ok=TRUE, multivariate=FALSE)
 #kable(anova_table2)
 #kable(
-nice.anova(anova_table2, es = "ges", observed = c("gamefam","sgsfam"),
+afex::nice(anova_table2, es = "ges", observed = c("gamefam","sgsfam"),
     correction = c("GG", "HF", "none"), MSE = TRUE,
     sig.symbols = c("", " *", " **", " ***"))
 #)
@@ -410,7 +414,7 @@ atmsg_paired_model <- Anova(atmsg_paired_model_lm,
   idesign = ~model,
   type = "II" )
 
-nice.anova(atmsg_paired_model, es = "ges", observed = "gamefam",
+afex::anova(atmsg_paired_model, es = "ges", observed = "gamefam",
     correction = c("GG", "HF", "none"), MSE = TRUE,
     sig.symbols = c("", " *", " **", " ***"))
 
