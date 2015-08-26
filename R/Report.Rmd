@@ -11,7 +11,7 @@ output:
 ---
 
 
-```{r setup, echo=FALSE, include=FALSE, cache=TRUE}
+```{r setup, echo=FALSE, include=FALSE, cache=FALSE}
 
 require(reshape) # For renaming data
 require(reshape2) # For melting data
@@ -26,7 +26,7 @@ require(likert) #for building beautiful likert graphs
 require(xtable) #Needed by knitr
 require(knitr) # For making tables for the report
 require(vcd) #Structables
-require(dplyr)
+#require(dplyr)
 
 
 #require(lawstat)
@@ -125,7 +125,7 @@ We recruited only participants who self-identified as very familiar with serious
 ### Age of participants
 
 
-```{r participants_age, echo=FALSE, results = "asis", cache=TRUE}
+```{r participants_age, echo=FALSE, results = "asis", cache=FALSE}
 kable(psych::describe(uniquedata$age), caption="Age of all participants")
 
 #kable(psych::describe(uniquedata$age[which(uniquedata$location=="Location1")]), caption="Age of participants in group A (Location1)") 
@@ -140,7 +140,7 @@ kable(psych::describe(uniquedata$age), caption="Age of all participants")
 ### Familiarity with games and serious games
 
 
-```{r participants_familiarity, echo=FALSE, results = "asis", cache=TRUE}
+```{r participants_familiarity, echo=FALSE, results = "asis", cache=FALSE}
 table_gamefam <-table(uniquedata$gamefam,uniquedata$group)
 table_gamefam <- addmargins(table_gamefam)
 kable(table_gamefam, caption="Familiarity of participants with games, per group")
@@ -161,7 +161,7 @@ The tables below show how many participants used which model to evaluate which g
 Note that 3 participants did not deliver their analysis of Senior PM Game (two in Group B and one in Group C).
 
 
-```{r participants_per_model, echo=FALSE, results = "asis", cache=TRUE}
+```{r participants_per_model, echo=FALSE, results = "asis", cache=FALSE}
 ATMSG_cases <-table(ATMSG_data$game,ATMSG_data$group)
 ATMSG_cases <- addmargins(ATMSG_cases)
 kable(ATMSG_cases, caption="Participants that analyzed ATMSG, per group and per game")
@@ -184,28 +184,28 @@ For details on the SUS scale and how the SUS score is calculated, see [Annex I](
 
 #### ATMSG SUS scores, all groups
 
-```{r atmsg_sus_scores, echo=FALSE, cache=TRUE}
+```{r atmsg_sus_scores, echo=FALSE, cache=FALSE}
 psych::describe(ATMSG_data$sus_score)
 
 ```
 
 #### ATMSG SUS scores by location
 
-```{r atmsg_sus_scores_bylocation, echo=FALSE, cache=TRUE}
+```{r atmsg_sus_scores_bylocation, echo=FALSE, cache=FALSE}
 psych::describeBy(ATMSG_data$sus_score, group=ATMSG_data$location)
 
 ```
 
 #### SUS scores by familiarity with games
 
-```{r atmsg_sus_scores_bygamefam, echo=FALSE, cache=TRUE}
+```{r atmsg_sus_scores_bygamefam, echo=FALSE, cache=FALSE}
 psych::describeBy(ATMSG_data$sus_score, group=ATMSG_data$gamefam)
 
 ```
 
 #### SUS scores by familiarity with serious games
 
-```{r atmsg_sus_scores_bysgsfam, echo=FALSE, cache=TRUE}
+```{r atmsg_sus_scores_bysgsfam, echo=FALSE, cache=FALSE}
 psych::describeBy(ATMSG_data$sus_score, group=ATMSG_data$sgsfam)
 
 ```
@@ -218,7 +218,7 @@ For that purpose, we performed an ANOVA to compare the SUS scores for ATMSG. We 
 - H1 = The SUS scores are NOT the same, considering the game played and the participants familiarity with games or serious games.
 
 
-```{r anova_atmsg, echo=FALSE, cache=TRUE}
+```{r anova_atmsg, echo=FALSE, cache=FALSE}
 
 
 # Select only columns of interest
@@ -245,7 +245,7 @@ model.tables(aov(ATMSG_data_sus_anova$lm), type="means", se=FALSE) #se=TRUE give
 
 **A significant difference has been found in the game familiarity condition.** We performed a pairwise post-hoc Tukey test to identify which groups are different.
 
-```{r post-hoc_anova_atmsg, echo=FALSE, cache=TRUE}
+```{r post-hoc_anova_atmsg, echo=FALSE, cache=FALSE}
 describeBy(ATMSG_data_sus$sus_score, ATMSG_data_sus$gamefam)
 
 TukeyHSD(aov(ATMSG_data_sus_anova$lm), which='gamefam')
@@ -274,27 +274,27 @@ The same analysis of SUS scores was performed with LM-GM. These scores do not re
 
 #### LM-GM SUS scores, all groups (except A)
 
-```{r lmgm_sus_scores, echo=FALSE, cache=TRUE}
+```{r lmgm_sus_scores, echo=FALSE, cache=FALSE}
 psych::describe(LMGM_data$sus_score)
 
 ```
 #### LM-GM SUS scores by location
 
-```{r lmgm_sus_scores_bylocation, echo=FALSE, cache=TRUE}
+```{r lmgm_sus_scores_bylocation, echo=FALSE, cache=FALSE}
 psych::describeBy(LMGM_data$sus_score, group=LMGM_data$location)
 
 ```
 
 #### LM-GM SUS scores by familiarity with games
 
-```{r lmgm_sus_scores_bygamefam, echo=FALSE, cache=TRUE}
+```{r lmgm_sus_scores_bygamefam, echo=FALSE, cache=FALSE}
 psych::describeBy(LMGM_data$sus_score, group=LMGM_data$gamefam)
 
 ```
 
 #### LM-GM SUS scores by familiarity with serious games
 
-```{r lmgm_sus_scores_bysgsfam, echo=FALSE, cache=TRUE}
+```{r lmgm_sus_scores_bysgsfam, echo=FALSE, cache=FALSE}
 psych::describeBy(LMGM_data$sus_score, group=LMGM_data$sgsfam)
 
 ```
@@ -304,7 +304,7 @@ We also performed the ANOVA analysis in the results of the SUS in LM-GM to ident
 - H1 = The SUS scores are NOT the same, considering the game played and the participants familiarity with games or serious games.
 
 
-```{r anova_lmgm, echo=FALSE, cache=TRUE}
+```{r anova_lmgm, echo=FALSE, cache=FALSE}
 # Select only columns of interest
 LMGM_data_sus <- LMGM_data[c("id", "gamefam", "sgsfam", "game", "location", "model", "sus_score")]
 
@@ -357,7 +357,7 @@ H03 would even be of interest, but cannot be tested with this data, since this i
 
 First, we have a look at the box plots and the interaction plots of the data.
 
-```{r atmsg_lmgm_sus_plots, echo=FALSE, cache=TRUE}
+```{r atmsg_lmgm_sus_plots, echo=FALSE, cache=FALSE}
 # Boxplots
 ggplot(paireddata, aes(x=model, y=sus_score, fill=model)) + geom_boxplot() + facet_wrap(~ gamefam) + ggtitle("LM-GM vs ATMSG, differences between game familiarity levels")
 
@@ -388,7 +388,7 @@ Our variables:
 * Dependent variable: SUS Score
 
 
-```{r atmsg_lmgm_sus, echo=FALSE, cache=TRUE}
+```{r atmsg_lmgm_sus, echo=FALSE, cache=FALSE}
 
 #split groups
 summaryBy(sus_score~model*gamefam,data=paireddata,FUN=c(mean, length))
@@ -407,7 +407,7 @@ car::leveneTest(sus_score ~ gamefam, data=paireddata)
 
 **Type II ANOVA**
 
-```{r atmsg_lmgm_sus_anova_typeII, echo=FALSE, cache=TRUE}
+```{r atmsg_lmgm_sus_anova_typeII, echo=FALSE, cache=FALSE}
 
 
 atmsg_paired_anova <- afex::aov_ez(id="id", dv="sus_score", data=paireddata, between = "gamefam", within = "model", observed="gamefam",type = 2, return = "afex_aov", sig.symbols = c("", " *", " **", " ***"), es = "ges", correction = c("GG", "HF", "none"), MSE = TRUE)
@@ -430,7 +430,7 @@ Interpretations:
 
 We have collected the participant's comments on the questionnaires and coded the answers, from both groups. The tables below shows the number of participants in each group, split by familiarity with games.
 
-```{r qualitative_data_stats, echo=FALSE, results="asis", cache=TRUE}
+```{r qualitative_data_stats, echo=FALSE, results="asis", cache=FALSE}
 
 unique_participants <- qualdata[!duplicated(qualdata$id), c("id", "group", "gamefam", "sgsfam")]
 
@@ -444,7 +444,7 @@ rm(unique_participants)
 
 The table below shows how many participants evaluated each model.
 
-```{r qualitative_data_stats2, echo=FALSE, results="asis", cache=TRUE}
+```{r qualitative_data_stats2, echo=FALSE, results="asis", cache=FALSE}
 
 participants_vs_model <- quantdata[, c("id", "location", "model")]
 
@@ -460,7 +460,7 @@ rm(participants_vs_model_table)
 The table below shows the frequency in which the comments were made (for all three studies), split by familiarity with games. Repeated comments made by the same participant were dropped.
 
 
-```{r qualitative_data_full, echo=FALSE, results = "asis", cache=TRUE}
+```{r qualitative_data_full, echo=FALSE, results = "asis", cache=FALSE}
 
 #ftable <- buildfreqtable(qualdata)
 
@@ -478,7 +478,7 @@ From the table above, and counting the number of participants who made comments,
 
 * Number of participants who tought ATMSG is helpful = 15. This is the sum of the following codes: "ATMSGHelpful" and "ATMSGFillsObjective". 
 
-```{r qualitative_data_counts_atmsg, echo=FALSE, results = "asis", cache=TRUE}
+```{r qualitative_data_counts_atmsg, echo=FALSE, results = "asis", cache=FALSE}
 
 atmsg_helpful_answers <- c("ATMSGHelpful", "ATMSGFillsObjective")
 atmsg_helpful <- nondupqualdata[which(nondupqualdata$coded_answer %in% atmsg_helpful_answers), c("id", "coded_answer")]
@@ -494,7 +494,7 @@ nrow(count_atmsg_answers)
 * Number of participants who tought LMGM is helpful = 13. This is the sum of the following codes: "LMGMHelpful", "LMGMInvitesMoreThinking" and "LMGMSomewhatHelpful", removing repeated answers by the same participant. 
 
 
-```{r qualitative_data_counts_lmgm, echo=FALSE, results = "asis", cache=TRUE}
+```{r qualitative_data_counts_lmgm, echo=FALSE, results = "asis", cache=FALSE}
 
 lmgm_helpful_answers <- c("LMGMHelpful", "LMGMInvitesMoreThinking", "LMGMSomewhatHelpful","LMGMMoreFocused")
 lmgm_helpful <- nondupqualdata[which(nondupqualdata$coded_answer %in% lmgm_helpful_answers), c("id", "coded_answer")]
@@ -511,7 +511,7 @@ nrow(count_lmgm_answers)
 To generate the table below, we used only participants who evaluated both models. This table also shows the reversed frequency in which the comments were made, split by familiarity with games.
 
 
-```{r qualitative_data_paired_games, echo=FALSE, results = "asis", cache=TRUE}
+```{r qualitative_data_paired_games, echo=FALSE, results = "asis", cache=FALSE}
 
 
 
@@ -559,7 +559,7 @@ _Obs: Questions 4 and 10 indicate learnability of the system/product/model._
 
 Responses to each question of the SUS questionnaire.
 
-```{r likert_plots, echo=FALSE, results = "asis", fig.height=7, cache=TRUE}
+```{r likert_plots, echo=FALSE, results = "asis", fig.height=7, cache=FALSE}
 
 # get relevant data for Likert plots, with nice questions formatting
 likert_data <- preparelikertdata(quantdata) 
