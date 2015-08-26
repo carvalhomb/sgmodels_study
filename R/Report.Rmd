@@ -20,12 +20,13 @@ require(doBy) # Needed by summaryBy
 require(ez) # For the ANOVAs
 require(car) # For the ANOVAs
 require(gridExtra) # For arranging plots in grids
-require(afex) # For nice.anova tables
+require(afex) # For nice.anova tables. Needs afex >=0.14-2
 require(ggplot2) #For the plots
 require(likert) #for building beautiful likert graphs
 require(xtable) #Needed by knitr
 require(knitr) # For making tables for the report
 require(vcd) #Structables
+require(dplyr)
 
 
 #require(lawstat)
@@ -57,7 +58,7 @@ uniquedata <- removeduplicates(quantdata)
 
 #Isolating results from ATMSG analyses only
 ATMSG_data <- quantdata[which(quantdata$model=="ATMSG"), ]
-  
+
 #Isolating results from LMGM analyses only
 LMGM_data <- quantdata[which(quantdata$model=="LMGM"), ]
 
@@ -118,7 +119,7 @@ In Location2, the study was conducted over the course of two weeks, as part of a
 
 A third study was conducted online, using a LimeSurvey questionnaire and a Google Docs implementation of the analysis templates for both LM-GM and ATMSG. Participants were asked to evaluate the same game ("Senior PM Game") using both models. Group D used ATMSG first, while Group E used LM-GM. It was possible to stop the survey in the middle and return to it at a later time. 
 
-We recruited only participants who self-identified as very familiar with serious games or serious games experts. They were given a 20€ voucher as compensation for their time.
+We recruited only participants who self-identified as very familiar with serious games or serious games experts. They were given a 20euros voucher as compensation for their time.
 
 
 ### Age of participants
@@ -220,26 +221,20 @@ For that purpose, we performed an ANOVA to compare the SUS scores for ATMSG. We 
 ```{r anova_atmsg, echo=FALSE, cache=TRUE}
 
 
-# Build the model
-lmmodel_sus_atmsg <- lm(sus_score ~ gamefam + sgsfam + game, data=ATMSG_data)
+# Select only columns of interest
+ATMSG_data_sus <- ATMSG_data[c("id", "gamefam", "sgsfam", "game", "location", "model", "sus_score")]
 
 # There are no SDs for each group since ANOVA assumes that the variance (and consequently the SD) is the same for all the groups. Brown-Forsythe and Levene tests are made precisely to see if the variances are equal or not!
+
 #Test the homogeneity of variance
-#lawstat::levene.test(ATMSG_data$sus_score, ATMSG_data$gamefam)
 car::leveneTest(sus_score ~ gamefam, data=ATMSG_data)
 
-anova_table <- car::Anova(lmmodel_sus_atmsg,type=c("II"), contrasts=list(topic=contr.sum, sys=contr.sum), singular.ok=TRUE, multivariate=FALSE)
+#Perform the Anova, using Afex wrapper
+ATMSG_data_sus_anova <- afex::aov_car(sus_score ~ gamefam  + sgsfam + game + Error(id), data=ATMSG_data_sus,   type = 2, return = "afex_aov", contrasts=list(topic=contr.sum, sys=contr.sum), singular.ok=TRUE, multivariate=FALSE, correction = c("GG", "HF", "none"), MSE = TRUE, sig.symbols = c("", " *", " **", " ***"))
 
-#formula = sus_score ~ gamefam + sgsfam + game
-#aov_car(formula, data=ATMSG_data, observed = c("gamefam","sgsfam"), anova_table = list(correction = c("GG", "HF", "none"), es = "pes", MSE = TRUE, sig.symbols = c("", " *", " **", " ***")))
+kable(ATMSG_data_sus_anova$anova_table)
 
-#kable(anova_table)
-kable(afex::nice(anova_table, es = "ges", observed = c("gamefam","sgsfam"),
-    correction = c("GG", "HF", "none"), MSE = TRUE,
-    sig.symbols = c("", " *", " **", " ***")))
-rm(anova_table)
-
-model.tables(aov(lmmodel_sus_atmsg), type="means", se=FALSE) #se=TRUE gives error that design is unbalanced and asks me to use se.contrast to get Standard Error information instead
+model.tables(aov(ATMSG_data_sus_anova$lm), type="means", se=FALSE) #se=TRUE gives error that design is unbalanced and asks me to use se.contrast to get Standard Error information instead
 #se.contrast(aov(lmmodel_sus_atmsg), list(gamefam=="3-FewTimes", gamefam=="5-Gamer"), data = ATMSG_data)
 #se.contrast(aov(lmmodel_sus_atmsg), list(gamefam=="4-NowAndThen", gamefam=="5-Gamer"), data = ATMSG_data)
 
@@ -251,13 +246,21 @@ model.tables(aov(lmmodel_sus_atmsg), type="means", se=FALSE) #se=TRUE gives erro
 **A significant difference has been found in the game familiarity condition.** We performed a pairwise post-hoc Tukey test to identify which groups are different.
 
 ```{r post-hoc_anova_atmsg, echo=FALSE, cache=TRUE}
-describeBy(ATMSG_data$sus_score, ATMSG_data$gamefam)
+describeBy(ATMSG_data_sus$sus_score, ATMSG_data_sus$gamefam)
 
-TukeyHSD(aov(lmmodel_sus_atmsg), which='gamefam')
+TukeyHSD(aov(ATMSG_data_sus_anova$lm), which='gamefam')
 
-boxplot(sus_score~gamefam, data=ATMSG_data)
+#boxplot(sus_score~gamefam, data=ATMSG_data_sus)
 
-rm(lmmodel_sus_atmsg) #The linear model is not used anymore in this script
+# Boxplots
+ggplot(ATMSG_data_sus, aes(x=gamefam, y=sus_score, fill=gamefam)) + 
+  geom_boxplot(outlier.colour="black", outlier.shape=16, outlier.size=4) + 
+  labs(title="ATMSG usability score, by familiarity with games",x="Familiarity with games", y = "SUS Score") +
+  theme(legend.position="none") 
+
+
+
+rm(ATMSG_data_sus_anova) #The Anova object model is not used anymore in this script
 
 ```
 
@@ -302,24 +305,29 @@ We also performed the ANOVA analysis in the results of the SUS in LM-GM to ident
 
 
 ```{r anova_lmgm, echo=FALSE, cache=TRUE}
+# Select only columns of interest
+LMGM_data_sus <- LMGM_data[c("id", "gamefam", "sgsfam", "game", "location", "model", "sus_score")]
 
 #Test the homogeneity of variance
-#lawstat::levene.test(LMGM_data$sus_score, LMGM_data$gamefam)
-car::leveneTest(sus_score ~ gamefam, data=LMGM_data)
+car::leveneTest(sus_score ~ gamefam, data=LMGM_data_sus)
 
-lmmodel_sus_lmgm <- lm(sus_score ~ gamefam + sgsfam + game, data=LMGM_data)
-anova_table2 <- Anova(lmmodel_sus_lmgm,type=c("II"), contrasts=list(topic=contr.sum, sys=contr.sum), singular.ok=TRUE, multivariate=FALSE)
-#kable(anova_table2)
-#kable(
-afex::nice(anova_table2, es = "ges", observed = c("gamefam","sgsfam"),
-    correction = c("GG", "HF", "none"), MSE = TRUE,
-    sig.symbols = c("", " *", " **", " ***"))
-#)
+#Perform the Anova, using Afex wrapper
+LMGM_data_sus_anova <- afex::aov_car(sus_score ~ gamefam  + sgsfam + game + Error(id), data=LMGM_data_sus,   type = 2, return = "afex_aov", contrasts=list(topic=contr.sum, sys=contr.sum), singular.ok=TRUE, multivariate=FALSE, correction = c("GG", "HF", "none"), MSE = TRUE, sig.symbols = c("", " *", " **", " ***"))
 
-model.tables(aov(lmmodel_sus_lmgm), type="means", se=F)
-rm(lmmodel_sus_lmgm) #The linear model is not used anymore in this script
+kable(LMGM_data_sus_anova$anova_table)
 
-boxplot(sus_score~gamefam, data=LMGM_data)
+model.tables(aov(LMGM_data_sus_anova$lm), type="means", se=FALSE)
+
+
+#boxplot(sus_score~gamefam, data=LMGM_data_sus)
+# Boxplots
+ggplot(LMGM_data_sus, aes(x=gamefam, y=sus_score, fill=gamefam)) + 
+  geom_boxplot(outlier.colour="black", outlier.shape=16, outlier.size=4) + 
+  labs(title="LMGM usability score, by familiarity with games",x="Familiarity with games", y = "SUS Score") +
+  theme(legend.position="none") 
+
+ 
+
 
 ```
 
@@ -390,7 +398,6 @@ summaryBy(sus_score~model,data=paireddata,FUN=c(mean, length))
 summaryBy(sus_score~gamefam,data=paireddata,FUN=c(mean, length))
 
 ##Test the homogeneity of variance
-
 #Levene's test for between-subjects variable (game familiarity)
 car::leveneTest(sus_score ~ gamefam, data=paireddata) 
 
@@ -402,24 +409,12 @@ car::leveneTest(sus_score ~ gamefam, data=paireddata)
 
 ```{r atmsg_lmgm_sus_anova_typeII, echo=FALSE, cache=TRUE}
 
-#Using Anova() function from the car package, for consistency with the previous ANOVAs.
 
-# Reshaping the data
-paireddata_wide <- reshape(paireddata, idvar="id", timevar="model", v.names="sus_score", direction="wide")
+atmsg_paired_anova <- afex::aov_ez(id="id", dv="sus_score", data=paireddata, between = "gamefam", within = "model", observed="gamefam",type = 2, return = "afex_aov", sig.symbols = c("", " *", " **", " ***"), es = "ges", correction = c("GG", "HF", "none"), MSE = TRUE)
 
-atmsg_paired_model_lm <- lm(formula = cbind(sus_score.LMGM, sus_score.ATMSG) ~ gamefam, data=paireddata_wide)
+kable(atmsg_paired_anova$anova_table)
 
-atmsg_paired_model <- Anova(atmsg_paired_model_lm,
-  idata = data.frame( model = factor(1:2) ),
-  idesign = ~model,
-  type = "II" )
-
-afex::anova(atmsg_paired_model, es = "ges", observed = "gamefam",
-    correction = c("GG", "HF", "none"), MSE = TRUE,
-    sig.symbols = c("", " *", " **", " ***"))
-
-#kable(etasq(atmsg_lmgm_sus_mod, anova = TRUE, partial = TRUE, test="Wilks"))
-rm(atmsg_paired_model)
+rm(atmsg_paired_anova)
 
 ```
 
@@ -437,11 +432,7 @@ We have collected the participant's comments on the questionnaires and coded the
 
 ```{r qualitative_data_stats, echo=FALSE, results="asis", cache=TRUE}
 
-
-
 unique_participants <- qualdata[!duplicated(qualdata$id), c("id", "group", "gamefam", "sgsfam")]
-
-
 
 unique_participants <- addmargins(table(unique_participants$group, unique_participants$gamefam))
 
@@ -451,7 +442,22 @@ rm(unique_participants)
 ```
 
 
-The table below shows the frequency in which the comments were made (for all three studies), split by familiarity with games.
+The table below shows how many participants evaluated each model.
+
+```{r qualitative_data_stats2, echo=FALSE, results="asis", cache=TRUE}
+
+participants_vs_model <- quantdata[, c("id", "location", "model")]
+
+participants_vs_model_table <- addmargins(table(participants_vs_model$model, participants_vs_model$location), 2)
+
+kable(participants_vs_model_table, caption="Number of participants in each location who evaluated each model")
+rm(participants_vs_model)
+rm(participants_vs_model_table)
+
+```
+
+
+The table below shows the frequency in which the comments were made (for all three studies), split by familiarity with games. Repeated comments made by the same participant were dropped.
 
 
 ```{r qualitative_data_full, echo=FALSE, results = "asis", cache=TRUE}
@@ -463,9 +469,44 @@ ftable_gamefam <- as.data.frame(addmargins(ftable_gamefam, margin=2))
 ftable_gamefam <- ftable_gamefam[with(ftable_gamefam, order(-Sum)), ]
 
 kable(ftable_gamefam, caption="Frequency of comments, all participants, by game familiarity")
-rm(ftable_gamefam)
+#rm(ftable_gamefam)
+```
+
+
+
+From the table above, and counting the number of participants who made comments, we reached the conclusions below. Multiple answers from the same participants were counted just once.
+
+* Number of participants who tought ATMSG is helpful = 15. This is the sum of the following codes: "ATMSGHelpful" and "ATMSGFillsObjective". 
+
+```{r qualitative_data_counts_atmsg, echo=FALSE, results = "asis", cache=TRUE}
+
+atmsg_helpful_answers <- c("ATMSGHelpful", "ATMSGFillsObjective")
+atmsg_helpful <- nondupqualdata[which(nondupqualdata$coded_answer %in% atmsg_helpful_answers), c("id", "coded_answer")]
+#table(atmsg_helpful)
+
+count_atmsg_answers <- aggregate(data.frame(count = atmsg_helpful$id), list(value = atmsg_helpful$id), length)
+
+nrow(count_atmsg_answers)
+
 
 ```
+
+* Number of participants who tought LMGM is helpful = 13. This is the sum of the following codes: "LMGMHelpful", "LMGMInvitesMoreThinking" and "LMGMSomewhatHelpful", removing repeated answers by the same participant. 
+
+
+```{r qualitative_data_counts_lmgm, echo=FALSE, results = "asis", cache=TRUE}
+
+lmgm_helpful_answers <- c("LMGMHelpful", "LMGMInvitesMoreThinking", "LMGMSomewhatHelpful","LMGMMoreFocused")
+lmgm_helpful <- nondupqualdata[which(nondupqualdata$coded_answer %in% lmgm_helpful_answers), c("id", "coded_answer")]
+#table(lmgm_helpful)
+
+count_lmgm_answers <- aggregate(data.frame(count = lmgm_helpful$id), list(value = lmgm_helpful$id), length)
+nrow(count_lmgm_answers)
+
+
+```
+
+----
 
 To generate the table below, we used only participants who evaluated both models. This table also shows the reversed frequency in which the comments were made, split by familiarity with games.
 
